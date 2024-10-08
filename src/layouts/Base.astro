@@ -1,0 +1,117 @@
+---
+import 'sanitize.css';
+import 'sanitize.css/forms.css';
+import 'sanitize.css/assets.css';
+import 'sanitize.css/typography.css';
+
+import { Schema } from 'astro-seo-schema';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const site = import.meta.env.SITE;
+const ogURL = `${site}/og.png`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    {description && <meta name="description" content={description} />}
+    {description && <link href={Astro.url.href} rel="canonical" />}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    {description && <meta name="description" content={description} />}
+    {description && <link href={Astro.url.href} rel="canonical" />}
+    {
+      description && (
+        <Schema
+          item={{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'UX Corp Rangel',
+            description,
+            image: ogURL,
+            url: site
+          }}
+        />
+      )
+    }
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={site} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=`${title}` />
+    <meta property="og:description" content=`${description}` />
+    <meta property="og:image" content={ogURL} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content=`${site}` />
+    <meta property="twitter:url" content=`${site}` />
+    <meta name="twitter:title" content=`${title}` />
+    <meta name="twitter:description" content=`${description}` />
+    <meta name="twitter:image" content={ogURL} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @view-transition {
+    navigation: auto;
+  }
+
+  :root {
+    --bg-color: #04011c;
+    --primary-color: #2e58ff;
+    --secondary-color: #fa86ce;
+    --tertiary-color: #a2efc4;
+
+    color-scheme: dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    --scrollbar-size: 0.4rem;
+
+    &::-webkit-scrollbar {
+      width: var(--scrollbar-size);
+      height: var(--scrollbar-size);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--bg-color);
+      border-radius: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--yellow);
+      border-radius: 0.2rem;
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--yellow) var(--bg-color);
+    }
+  }
+</style>
