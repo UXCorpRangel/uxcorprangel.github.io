@@ -93,6 +93,8 @@ const ogURL = `${site}/og.png`;
   body {
     --scrollbar-size: 0.4rem;
 
+    background-color: var(--bg-color);
+
     &::-webkit-scrollbar {
       width: var(--scrollbar-size);
       height: var(--scrollbar-size);
@@ -104,14 +106,14 @@ const ogURL = `${site}/og.png`;
     }
 
     &::-webkit-scrollbar-thumb {
-      background: var(--yellow);
+      background: var(--primary-color);
       border-radius: 0.2rem;
     }
   }
 
   @supports not selector(::-webkit-scrollbar) {
     body {
-      scrollbar-color: var(--yellow) var(--bg-color);
+      scrollbar-color: var(--primary-color) var(--bg-color);
     }
   }
 </style>
