@@ -94,6 +94,7 @@ const ogURL = `${site}/og.png`;
     --scrollbar-size: 0.4rem;
 
     background-color: var(--bg-color);
+    cursor: url(/assets/images/cursor/cursor-auto.png), auto;
 
     &::-webkit-scrollbar {
       width: var(--scrollbar-size);
@@ -115,5 +116,27 @@ const ogURL = `${site}/og.png`;
     body {
       scrollbar-color: var(--primary-color) var(--bg-color);
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p,
+  span {
+    cursor: url(/assets/images/cursor/cursor-text.png), text;
+  }
+
+  a,
+  button {
+    cursor: url(/assets/images/cursor/cursor-pointer.png), pointer;
+  }
+
+  a:active,
+  button:active {
+    cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
   }
 </style>
