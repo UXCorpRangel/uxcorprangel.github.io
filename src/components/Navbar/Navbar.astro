@@ -32,34 +32,29 @@
 
 <style>
   header {
-    color: rgb(0 0 0);
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    background-color: rgb(255 255 255);
+    color: var(--alt-text-color);
+    padding-block: 1.25rem;
+    backdrop-filter: blur(12px);
+    background-color: rgb(from var(--text-color) r g b / 0.9);
     border-style: solid;
-    border-color: rgb(0 0 0);
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    border-color: var(--alt-text-color);
+    border-block-width: 2px;
     height: 96px;
     z-index: 40;
-    top: 0px;
-    left: 0px;
-    right: 0px;
     position: fixed;
+    inset-inline: 0px;
+    inset-block-start: 0px;
 
     & .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      justify-content: space-between;
-      align-items: center;
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 1rem;
+      margin-inline: auto;
 
       @media (width >= 1024px) {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-inline: 2rem;
       }
 
       & h1 {
@@ -71,41 +66,38 @@
       #target-nav {
         text-transform: uppercase;
         transition-duration: 300ms;
-        transform: translate(var(--tw-translate-x), 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+        transform: translate(var(--translate-x), 0);
 
         @media (width < 1024px) {
-          --tw-translate-x: -100%;
+          --translate-x: -100%;
           width: 18rem;
           z-index: 50;
-          left: 0px;
-          background-color: rgb(255 255 255);
-          border-color: rgb(0 0 0);
+          background-color: var(--text-color);
+          border-color: var(--alt-text-color);
           border-right-width: 2px;
-          top: 0px;
-          bottom: 0px;
           position: fixed;
+          inset-inline-start: 0px;
+          inset-block: 0px;
         }
 
         & nav {
           @media (width < 1024px) {
-            overflow: auto;
-            flex-direction: column;
             height: 100%;
+            overflow: auto;
             display: flex;
+            flex-direction: column;
           }
 
           @media (width >= 1024px) {
-            margin-left: 1rem;
+            margin-inline-start: 1rem;
           }
 
           a {
             @media (width < 1024px) {
-              padding-top: 0.75rem;
-              padding-bottom: 0.75rem;
-              padding-left: 1rem;
-              padding-right: 1rem;
-              border-color: rgb(0 0 0);
-              border-bottom-width: 1px;
+              padding-block: 0.75rem;
+              padding-inline: 1rem;
+              border-color: var(--alt-text-color);
+              border-block-end-width: 1px;
             }
 
             &:hover,

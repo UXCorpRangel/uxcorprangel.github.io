@@ -5,31 +5,48 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="UX Corp Rangel" description="Astro description">
   <main>
     <section id="hero"></section>
+
     <section>
       <a href="https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0">FIGMA con el logo</a>
     </section>
+
     <section>
       <a href="https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1">FIGMA con el diseño </a>
     </section>
+
+    <section></section>
+
+    <section></section>
+
     <section></section>
   </main>
 </Layout>
 
 <style>
   main {
+    width: min(80rem, 100vw);
+
     section {
       height: 100dvh;
 
       &:nth-child(2) {
-        background-color: var(--primary-color);
+        background-color: var(--magic-mint-color);
       }
 
       &:nth-child(3) {
-        background-color: var(--secondary-color);
+        background-color: var(--saffron-color);
       }
 
       &:nth-child(4) {
-        background-color: var(--tertiary-color);
+        background-color: var(--mauve-color);
+      }
+
+      &:nth-child(5) {
+        background-color: var(--alt-text-color);
+      }
+
+      &:nth-child(6) {
+        background-color: var(--cinnabar-color);
       }
     }
   }
