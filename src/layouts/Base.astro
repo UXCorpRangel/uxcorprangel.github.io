@@ -156,7 +156,7 @@ const ogURL = `${site}/og.png`;
   h6,
   li,
   p,
-  span {
+  p * {
     cursor: url(/assets/images/cursor/cursor-text.png), text;
   }
 
@@ -170,12 +170,16 @@ const ogURL = `${site}/og.png`;
   }
 
   a,
-  button {
+  a *,
+  button,
+  button * {
     cursor: url(/assets/images/cursor/cursor-pointer.png), pointer;
   }
 
   a:active,
-  button:active {
+  a:active *,
+  button:active,
+  button:active * {
     cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
   }
 </style>

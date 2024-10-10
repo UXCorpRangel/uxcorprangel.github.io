@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Button from '@components/LinkButton.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="UX Corp Rangel" description="Astro description">
@@ -7,14 +8,27 @@ import Layout from '../layouts/Layout.astro';
     <section id="hero"></section>
 
     <section>
-      <a href="https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0">FIGMA con el logo</a>
+      <Button
+        shadow="dark"
+        label="FIGMA con los logos"
+        icon="socials/website"
+        link="https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0"
+      />
     </section>
 
     <section>
-      <a href="https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1">FIGMA con el diseño </a>
+      <Button label="FIGMA con el diseño" icon="socials/website" link="https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1" />
     </section>
 
-    <section></section>
+    <section>
+      <Button label="Only text" link="#" />
+      <Button label="Green shadow" link="#" shadow="green" />
+      <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+      <Button label="With icon" link="#" icon="user-star" />
+      <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      <Button label="External" link="#" external />
+      <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+    </section>
 
     <section></section>
 
@@ -28,6 +42,11 @@ import Layout from '../layouts/Layout.astro';
 
     section {
       height: 100dvh;
+
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:nth-child(2) {
         background-color: var(--magic-mint-color);

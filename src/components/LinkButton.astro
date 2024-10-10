@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  /**
+   * La URL a la que se redirigirá el usuario al hacer clic en el botón.
+   */
+  link: string;
+
+  /**
+   * El texto que se mostrará en el botón.
+   */
+  label: string;
+
+  /**
+   * El nombre del ícono que se mostrará en el botón. Si no se proporciona, no se mostrará ningún ícono.
+   */
+  icon?: string;
+
+  /**
+   * Indica si el enlace se abrirá en una nueva pestaña. Por defecto es `false`.
+   */
+  external?: boolean;
+
+  /**
+   * Indica si se debe ocultar el texto del botón. Por defecto es `false`.
+   */
+  hideLabel?: boolean;
+
+  /**
+   * El tipo de sombra que se aplicará al botón. Por defecto es `dark`.
+   */
+  shadow?: 'green' | 'dark';
+
+  /**
+   * El color de fondo del botón. Por defecto es `var(--text-color)`.
+   */
+  bgColor?: string;
+
+  /**
+   * El color del texto del botón. Por defecto es `var(--alt-text-color)`.
+   */
+  textColor?: string;
+};
+
+const { link, external = false, label, icon, shadow = 'dark', hideLabel = false, bgColor = 'var(--text-color)', textColor = 'var(--alt-text-color)' } = Astro.props;
+
+const linkButtonProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+
+<a
+  class:list={['link-button', `${shadow}-shadow`]}
+  aria-label={label.toLocaleLowerCase()}
+  href={link}
+  {...linkButtonProps}
+  style={{ '--link-bg-color': bgColor, '--link-text-color': textColor }}
+>
+  {icon && <Icon name={icon} size={24} />}
+  {!hideLabel && <span class="link-label">{label}</span>}
+</a>
+
+<style>
+  .link-button {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: flex-start;
+
+    text-decoration: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 0 transparent;
+
+    font-size: 1rem;
+    max-height: 2.5rem;
+    font-weight: 700;
+    color: var(--link-text-color);
+    background-color: var(--link-bg-color);
+    border: 2px solid var(--alt-text-color);
+
+    transition:
+      transform 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: translate(-4px, -2px);
+
+      &.green-shadow {
+        box-shadow: 4px 2px 0 0 var(--spring-green-color);
+      }
+      &.dark-shadow {
+        box-shadow: 4px 2px 0 0 var(--alt-text-color);
+      }
+    }
+
+    & .link-label {
+      flex: 1;
+    }
+  }
+</style>
