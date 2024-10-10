@@ -1,4 +1,7 @@
 ---
+import '@fontsource/titan-one';
+import '@fontsource-variable/onest';
+
 import 'sanitize.css';
 import 'sanitize.css/forms.css';
 import 'sanitize.css/assets.css';
@@ -93,6 +96,9 @@ const ogURL = `${site}/og.png`;
     --discord-color: #5865f2;
     --linkedin-color: #0e76a8;
 
+    --header-font-family: 'Titan One', system-ui;
+    --main-font-family: 'Onest Variable', sans-serif;
+
     color-scheme: dark;
   }
 
@@ -117,6 +123,7 @@ const ogURL = `${site}/og.png`;
     flex-direction: column;
     color: var(--text-color);
     background-color: var(--bg-color);
+    font-family: var(--main-font-family);
     cursor: url(/assets/images/cursor/cursor-auto.png), auto;
 
     &::-webkit-scrollbar {
@@ -151,6 +158,15 @@ const ogURL = `${site}/og.png`;
   p,
   span {
     cursor: url(/assets/images/cursor/cursor-text.png), text;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--header-font-family);
   }
 
   a,

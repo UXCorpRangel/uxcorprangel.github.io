@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@fontsource-variable/onest": "^5.1.0",
+    "@fontsource/titan-one": "^5.1.0",
     "astro": "^4.15.12",
     "astro-icon": "^1.1.1",
     "astro-seo-schema": "^4.0.2",
@@ -35,7 +37,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.4",
     "eslint-plugin-prettier": "^5.2.1",
-    "globals": "^15.10.0",
+    "globals": "^15.11.0",
     "lightningcss": "^1.27.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
