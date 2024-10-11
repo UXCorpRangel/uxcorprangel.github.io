@@ -1,0 +1,64 @@
+---
+type Props = {
+  name: string;
+  desc: string;
+  photo: string;
+};
+
+const { name, desc, photo } = Astro.props;
+---
+
+<div class="card-wrapper">
+  <img src=`/assets/volunteers/${photo}` alt="{name}" />
+  <div class="card-info">
+    <h3>{name}</h3>
+    <p>{desc}</p>
+  </div>
+  <div class="card-buttons">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .card-wrapper {
+    width: 386px;
+    height: fit-content;
+
+    background-color: var(--golden-tainoi-color);
+
+    border-radius: 1rem;
+    border: 2px solid var(--alt-text-color);
+    box-shadow: 4px 4px var(--spring-green-color);
+    padding: 1rem;
+
+    @media (width <= 430) {
+      width: 100%;
+    }
+
+    & img {
+      border-radius: 1rem;
+      border: 2px solid var(--alt-text-color);
+      aspect-ratio: 1;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    & .card-info {
+      padding: 1rem 0;
+      color: var(--alt-text-color);
+
+      & h3 {
+        font-family: var(--main-font-family);
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+    }
+
+    & .card-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+</style>
