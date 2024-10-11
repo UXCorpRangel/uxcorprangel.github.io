@@ -1,0 +1,94 @@
+---
+import Button from '@components/LinkButton.astro';
+import VolunteerCard from '@components/VolunteerCard.astro';
+---
+
+<section id="voluntarios">
+  <div class="container">
+    <header>
+      <h1>Voluntarios</h1>
+    </header>
+    <article class="cards-container">
+      <VolunteerCard name="Facundo D’Andrea" desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus." photo="facu.webp">
+        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      </VolunteerCard>
+      <VolunteerCard name="Facundo D’Andrea" desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus." photo="facu.webp">
+        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      </VolunteerCard>
+      <VolunteerCard name="Facundo D’Andrea" desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus." photo="facu.webp">
+        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      </VolunteerCard>
+      <VolunteerCard name="Facundo D’Andrea" desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus." photo="facu.webp">
+        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      </VolunteerCard>
+      <VolunteerCard name="Facundo D’Andrea" desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus." photo="facu.webp">
+        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
+        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+      </VolunteerCard>
+    </article>
+  </div>
+</section>
+
+<style>
+  section {
+    height: fit-content;
+    width: 100%;
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .container {
+      width: min(80rem, 100vw);
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+    }
+
+    & header {
+      & h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        text-decoration: underline 0.25rem;
+      }
+    }
+
+    & .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media (width <= 768px) {
+    section {
+      & header {
+        & h1 {
+          font-size: 2.188em;
+        }
+      }
+
+      & .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+      }
+    }
+  }
+</style>

@@ -1,25 +1,18 @@
 ---
 import Button from '@components/LinkButton.astro';
 import Layout from '@layouts/Layout.astro';
-import Hero from 'src/sections/hero.astro';
+import AboutUs from '@sections/AboutUs.astro';
+import Mission from '@sections/Mission.astro';
+import Volunteer from '@sections/Volunteer.astro';
 ---
 
 <Layout title="UX Corp Rangel" description="Astro description">
   <main>
     <Hero />
 
-    <section>
-      <Button
-        shadow="dark"
-        label="FIGMA con los logos"
-        icon="socials/website"
-        link="https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0"
-      />
-    </section>
+    <AboutUs />
 
-    <section>
-      <Button label="FIGMA con el diseño" icon="socials/website" link="https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1" />
-    </section>
+    <Mission />
 
     <section>
       <Button label="Only text" link="#" />
@@ -33,13 +26,13 @@ import Hero from 'src/sections/hero.astro';
 
     <section></section>
 
-    <section></section>
+    <Volunteer />
   </main>
 </Layout>
 
 <style>
   main {
-    width: min(80rem, 100vw);
+    width: 100%;
 
     section {
       height: 100dvh;
@@ -48,10 +41,6 @@ import Hero from 'src/sections/hero.astro';
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &:nth-child(2) {
-        background-color: var(--magic-mint-color);
-      }
 
       &:nth-child(3) {
         background-color: var(--saffron-color);

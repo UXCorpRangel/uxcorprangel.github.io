@@ -1,0 +1,74 @@
+---
+type Props = {
+  title: string;
+  desc: string;
+  icon: string;
+  color: string;
+};
+
+const { title, desc, icon, color } = Astro.props;
+---
+
+<div class="card-wrapper">
+  <div class="card-icon" style={{ '--background': color }}>
+    <img src=`/assets/icons/${icon}` alt={title} />
+  </div>
+  <div class="card-info">
+    <h3>{title}</h3>
+    <p>{desc}</p>
+  </div>
+</div>
+
+<style>
+  .card-wrapper {
+    width: 385px;
+    min-height: 244px;
+    background-color: var(--portage-color);
+    border-radius: 1rem;
+    border: 2px solid var(--alt-text-color);
+    box-shadow: 4px 4px var(--spring-green-color);
+    position: relative;
+
+    @media (width <= 430) {
+      width: 100%;
+    }
+
+    & .card-icon {
+      height: 130px;
+      width: 130px;
+
+      border-radius: 99999px;
+      background-color: var(--background);
+      border: 2px solid var(--alt-text-color);
+      box-shadow: 4px 4px var(--alt-text-color);
+
+      position: absolute;
+      inset-block-start: -70;
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: fit-content;
+      }
+    }
+
+    & .card-info {
+      position: absolute;
+      inset-block-start: 80;
+      padding: 0 1rem;
+      color: var(--alt-text-color);
+      text-align: center;
+
+      & h3 {
+        font-family: var(--main-font-family);
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+</style>
