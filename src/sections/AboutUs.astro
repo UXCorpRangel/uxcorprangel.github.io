@@ -1,0 +1,109 @@
+<section id="sobre-nosotros">
+  <div class="container">
+    <header>
+      <h1>Sobre <span>Nosotros</span></h1>
+    </header>
+    <article>
+      <p>
+        UXCorpRangel es liderada por Ana Rangel, conocida en Twitch como UXAnaRangel. Ana es una streamer y experta en UX/UI con años de experiencia en el campo. Su visión es crear
+        una comunidad donde diseñadores y desarrolladores se unen para ganar experiencias y conocimientos mientras crean proyectos increíbles. Crecemos juntos, aprendemos juntos y
+        nos divertimos juntos.
+      </p>
+      <hr />
+      <blockquote>
+        <p class="quote">
+          "One of the things I've been pushing is code reading. I think that is the most useful thing that a community of programmers can do for each other — spend time on a
+          regular basis reading each other's code."
+        </p>
+        <p class="author">Douglas Crockford</p>
+      </blockquote>
+    </article>
+  </div>
+</section>
+
+<style>
+  section {
+    height: 50rem;
+    width: 100%;
+    background-color: var(--magic-mint-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--alt-text-color);
+
+    & .container {
+      width: min(80rem, 100vw);
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+
+      & header {
+        & h1 {
+          font-weight: 400;
+          font-size: 4.375rem;
+          text-align: center;
+          margin-bottom: 4rem;
+
+          & span {
+            text-decoration: underline 0.25rem;
+          }
+        }
+      }
+
+      & article {
+        max-width: 70.563rem;
+        margin: 0 auto;
+
+        & p {
+          font-weight: 500;
+          margin-bottom: 2rem;
+          text-wrap: pretty;
+          font-size: 1.25rem;
+        }
+
+        & hr {
+          margin-bottom: 2rem;
+          border: 1px solid var(--alt-text-color);
+        }
+
+        & blockquote {
+          width: 90%;
+          text-align: center;
+          margin: 0 auto;
+
+          & .quote {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  @media (width <= 768px) {
+    section {
+      height: fit-content;
+      & .container {
+        margin: 4rem 0;
+        & header {
+          & h1 {
+            font-size: 2.188em;
+          }
+        }
+
+        & article {
+          & blockquote {
+            & .quote {
+              font-size: 1rem;
+            }
+
+            & .author {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
