@@ -7,5 +7,9 @@
     ".gitignore": ".gitkeep,.gitattributes",
     ".prettierrc.mjs": ".prettierrc.*.json,.prettierignore",
     "README.md": "LICENSE,CONTRIBUTING.md"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   }
 }
