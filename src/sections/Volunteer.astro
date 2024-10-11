@@ -1,6 +1,50 @@
 ---
 import Button from '@components/LinkButton.astro';
 import VolunteerCard from '@components/VolunteerCard.astro';
+
+const volunteers = [
+  {
+    name: 'Facundo D’Andrea',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
+    photo: 'facu.webp',
+    tags: ['Dev', 'Custom color'],
+    socials: [
+      {
+        name: 'LinkedIn',
+        link: 'https://www.linkedin.com/company/uxcorprangel',
+        iconName: 'socials/linkedin'
+      }
+    ]
+  },
+  {
+    name: 'Facundo D’Andrea',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
+    photo: 'facu.webp',
+    tags: ['Dev', 'Custom color'],
+    socials: []
+  },
+  {
+    name: 'Facundo D’Andrea',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
+    photo: 'facu.webp',
+    tags: ['Dev', 'Custom color'],
+    socials: []
+  },
+  {
+    name: 'Facundo D’Andrea',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
+    photo: 'facu.webp',
+    tags: ['Dev', 'Custom color'],
+    socials: []
+  },
+  {
+    name: 'Facundo D’Andrea',
+    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
+    photo: 'facu.webp',
+    tags: ['Dev'],
+    socials: []
+  }
+];
 ---
 
 <section id="voluntarios">
@@ -9,51 +53,30 @@ import VolunteerCard from '@components/VolunteerCard.astro';
       <h1>Voluntarios</h1>
     </header>
     <article class="cards-container">
-      <VolunteerCard
-        name="Facundo D’Andrea"
-        desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus."
-        photo="facu.webp"
-      >
-        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
-        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-      </VolunteerCard>
-      <VolunteerCard
-        name="Facundo D’Andrea"
-        desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus."
-        photo="facu.webp"
-      >
-        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
-        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-      </VolunteerCard>
-      <VolunteerCard
-        name="Facundo D’Andrea"
-        desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus."
-        photo="facu.webp"
-      >
-        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
-        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-      </VolunteerCard>
-      <VolunteerCard
-        name="Facundo D’Andrea"
-        desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus."
-        photo="facu.webp"
-      >
-        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
-        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-      </VolunteerCard>
-      <VolunteerCard
-        name="Facundo D’Andrea"
-        desc="Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus."
-        photo="facu.webp"
-      >
-        <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-        <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
-        <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-      </VolunteerCard>
+      {
+        volunteers.map(({ name, desc, photo, socials, tags }) => (
+          <VolunteerCard name={name} desc={desc} photo={photo}>
+            {tags.map(tag => (
+              // we need to implement a tag component
+              <span
+                class="tag"
+                style="border: 1px solid var(--alt-text-color); color: var(--alt-text-color); border-radius: 24px; display: flex; align-items: center; padding: 0.5rem 0.75rem; background: var(--magic-mint-color);"
+              >
+                {tag}
+              </span>
+            ))}
+
+            {socials.map(({ name, link, iconName }) => (
+              <Button external label={name} link={link} icon={iconName} />
+            ))}
+
+            {/* examples */}
+            <Button label="Custom Color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
+            <Button label="With icon" link="#" icon="socials/linkedin" />
+            <Button label="Only icon" link="#" icon="socials/github" hideLabel />
+          </VolunteerCard>
+        ))
+      }
     </article>
   </div>
 </section>
