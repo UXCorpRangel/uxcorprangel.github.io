@@ -1,20 +1,14 @@
 ---
 import Button from '@components/LinkButton.astro';
 import Layout from '@layouts/Layout.astro';
+import AboutUs from '@sections/AboutUs.astro';
 ---
 
 <Layout title="UX Corp Rangel" description="Astro description">
   <main>
     <section id="hero"></section>
 
-    <section>
-      <Button
-        shadow="dark"
-        label="FIGMA con los logos"
-        icon="socials/website"
-        link="https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0"
-      />
-    </section>
+    <AboutUs />
 
     <section>
       <Button label="FIGMA con el diseño" icon="socials/website" link="https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1" />
@@ -38,7 +32,7 @@ import Layout from '@layouts/Layout.astro';
 
 <style>
   main {
-    width: min(80rem, 100vw);
+    width: 100%;
 
     section {
       height: 100dvh;
@@ -47,10 +41,6 @@ import Layout from '@layouts/Layout.astro';
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &:nth-child(2) {
-        background-color: var(--magic-mint-color);
-      }
 
       &:nth-child(3) {
         background-color: var(--saffron-color);
