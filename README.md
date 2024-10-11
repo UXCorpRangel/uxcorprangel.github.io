@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+[Figma](https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1)
+[Prototipo](https://www.figma.com/proto/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=3-2&t=hB5wvwUrPueRNM7c-1)
+
+
 ```sh
 npm create astro@latest -- --template basics
 ```
