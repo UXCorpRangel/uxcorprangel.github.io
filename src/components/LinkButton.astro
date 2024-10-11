@@ -43,7 +43,16 @@ type Props = {
   textColor?: string;
 };
 
-const { link, external = false, label, icon, shadow = 'dark', hideLabel = false, bgColor = 'var(--text-color)', textColor = 'var(--alt-text-color)' } = Astro.props;
+const {
+  link,
+  external = false,
+  label,
+  icon,
+  shadow = 'dark',
+  hideLabel = false,
+  bgColor = 'var(--text-color)',
+  textColor = 'var(--alt-text-color)'
+} = Astro.props;
 
 const linkButtonProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 ---
