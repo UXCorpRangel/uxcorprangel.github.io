@@ -1,0 +1,132 @@
+---
+import ProjectCard from '@components/ProjectCard.astro';
+import Button from '@components/LinkButton.astro';
+---
+
+<section id="projectos">
+  <header>
+    <h1>Nuestros <span>Proyectos</span></h1>
+  </header>
+  <article class="projects-container">
+    <ProjectCard
+      className="project-principal"
+      desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables."
+      title="Ana x Cards"
+      photo="card.webp"
+    >
+      <Button
+        label="Página"
+        link="https://uxcorprangel.github.io/ana-cards-web/"
+        icon="socials/website"
+        bgColor="var(--cinnabar-color)"
+        textColor="var(--text-color)"
+        external
+      />
+      <Button label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
+    </ProjectCard>
+
+    <div class="dual-projects">
+      <ProjectCard
+        className="project-secondary"
+        desc="Gracias al apoyo de muchos desarrolladores de la comunidad Ana logró llevar a cabo el rediseño de su portafolios, por esta razón decidió retribuir esta ayuda diseñando 3 plantillas para portafolios de desarrolladores, las cuales han sido desarrolladas por miembros de la comunidad para que sean fáciles de usar."
+        title="Portafolios para devs"
+        photo="portfolio-dev.webp"
+      >
+        <Button
+          label="Página"
+          link="https://unicorn-sparkle.web.app"
+          icon="socials/website"
+          bgColor="var(--cinnabar-color)"
+          textColor="var(--text-color)"
+          external
+        />
+        <Button label="GitHub" link="https://github.com/UXCorpRangel/portfolios-dev" icon="socials/github" external />
+      </ProjectCard>
+
+      <ProjectCard
+        className="project-tertiary"
+        desc="Diseñamos y desarrollamos la web de la JSConf Chile 2024 y La Previa de este evento, apoyando así el evento de JavaScript más importante de Chile realizado por una comunidad para otras comunidades e individuos."
+        title="JSConf Chile 2024"
+        photo="jsConf.webp"
+      >
+        <Button
+          label="Página"
+          link="https://jsconf.cl"
+          icon="socials/website"
+          bgColor="var(--cinnabar-color)"
+          textColor="var(--text-color)"
+          external
+        />
+        <Button label="GitHub" link="https://github.com/UXCorpRangel/js-conf-cl-2024" icon="socials/github" external />
+      </ProjectCard>
+    </div>
+  </article>
+
+  <Button label="Ver más" shadow="green" icon="external" link="/proyectos" bgColor="var(--cinnabar-color)" textColor="var(--text-color)" />
+</section>
+
+<style>
+  section {
+    min-height: 100dvh;
+    width: 100%;
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    & .container {
+      width: min(80rem, 100vw);
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+    }
+
+    & header {
+      & h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+        text-align: center;
+        margin-bottom: 4rem;
+
+        & span {
+          text-decoration: underline 0.25rem;
+        }
+      }
+    }
+
+    & .projects-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 6rem;
+
+      .dual-projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+  @media (width <= 768px) {
+    section {
+      & header {
+        & h1 {
+          font-size: 2.188em;
+        }
+      }
+
+      & .projects-container,
+      .dual-projects {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+</style>
