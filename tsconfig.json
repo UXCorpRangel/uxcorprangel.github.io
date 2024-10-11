@@ -16,7 +16,10 @@
       "@icons": ["./src/components/icons"],
 
       "@layouts/*": ["./src/layouts/*"],
-      "@layouts": ["./src/layouts"]
+      "@layouts": ["./src/layouts"],
+
+      "@sections/*": ["./src/sections/*"],
+      "@sections": ["./src/sections"]
     }
   }
 }
