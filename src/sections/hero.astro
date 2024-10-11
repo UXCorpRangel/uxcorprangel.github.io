@@ -92,13 +92,17 @@ const socials = [
     font-weight: 500;
     line-height: 30.6px;
     color: #f2f4ef;
-    max-width: 552px;
+    max-width: 550px;
+    text-wrap: pretty;
 
     --highlight-color-1: #f7cb46;
     --highlight-color-2: #cb9cf8;
     --highlight-color-3: #ee2525;
     --highlight-color-4: #39ed81;
 
+    .hero__highlight {
+      display: inline;
+    }
     .hero__highlight {
       &:nth-child(1) {
         color: var(--highlight-color-1);
