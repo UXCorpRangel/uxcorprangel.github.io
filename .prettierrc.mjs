@@ -6,7 +6,7 @@ export default {
   endOfLine: 'lf',
   useTabs: false,
   tabWidth: 2,
-  printWidth: 180,
+  printWidth: 150,
   arrowParens: 'avoid',
   trailingComma: 'none',
   bracketSpacing: true,
