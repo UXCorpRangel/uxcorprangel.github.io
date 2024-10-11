@@ -1,0 +1,87 @@
+---
+import MissionCard from '@components/MissionCard.astro';
+---
+
+<section id="mision">
+  <div class="container">
+    <header>
+      <h1>Nuestra <span>Misión</span></h1>
+    </header>
+    <article class="cards-container">
+      <MissionCard
+        title="Colaboración"
+        desc="Fomentar un ambiente de colaboración donde las ideas pueden ser compartidas libremente."
+        icon="colaboracion.webp"
+        color="var(--fuchsia-blue-color)"
+      />
+      <MissionCard
+        title="Educación"
+        desc="Proveer recursos y oportunidades de aprendizaje para todos los miembros de la comunidad."
+        icon="educacion.webp"
+        color="var(--violet-red-color)"
+      />
+      <MissionCard
+        title="Inclusividad"
+        desc="Crear un espacio inclusivo donde todos se sientan bienvenidos y valorados."
+        icon="inclusividad.webp"
+        color="var(--burning-orange-color)"
+      />
+    </article>
+  </div>
+</section>
+
+<style>
+  section {
+    height: fit-content;
+    width: 100%;
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .container {
+      width: min(80rem, 100vw);
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+    }
+
+    & header {
+      & h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+        text-align: center;
+        margin-bottom: 4rem;
+
+        & span {
+          text-decoration: underline 0.25rem;
+        }
+      }
+    }
+
+    & .cards-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 6rem;
+    }
+  }
+
+  @media (width <= 768px) {
+    section {
+      & header {
+        & h1 {
+          font-size: 2.188em;
+        }
+      }
+
+      & .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+      }
+    }
+  }
+</style>
