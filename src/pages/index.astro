@@ -2,7 +2,7 @@
 import Button from '@components/LinkButton.astro';
 import Layout from '@layouts/Layout.astro';
 import AboutUs from '@sections/AboutUs.astro';
-import Hero from '@sections/hero.astro';
+import Hero from '@sections/Hero.astro';
 import Mission from '@sections/Mission.astro';
 import Volunteer from '@sections/Volunteer.astro';
 ---
@@ -15,7 +15,7 @@ import Volunteer from '@sections/Volunteer.astro';
 
     <Mission />
 
-    <section>
+    <section id="proyectos">
       <Button label="Only text" link="#" />
       <Button label="Green shadow" link="#" shadow="green" />
       <Button label="Green shadow with icon" link="#" shadow="green" icon="socials/linkedin" />
@@ -25,7 +25,7 @@ import Volunteer from '@sections/Volunteer.astro';
       <Button label="Custom color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
     </section>
 
-    <section></section>
+    <section id="equipo"></section>
 
     <Volunteer />
   </main>
@@ -36,7 +36,7 @@ import Volunteer from '@sections/Volunteer.astro';
     width: 100%;
 
     section {
-      height: 100dvh;
+      min-height: 100dvh;
 
       gap: 1rem;
       display: flex;

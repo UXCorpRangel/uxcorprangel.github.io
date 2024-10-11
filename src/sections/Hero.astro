@@ -4,41 +4,39 @@ import LinkButton from '@components/LinkButton.astro';
 const socials = [
   {
     name: 'LinkedIn',
-    link: '#linkedIn',
+    link: 'https://www.linkedin.com/company/uxcorprangel',
     iconName: 'socials/linkedin',
-    style: {
-      '--bg': 'hsl(199 85% 36%)'
-    }
+    color: 'var(--linkedin-color)'
   },
   {
     name: 'Github',
-    link: '#github',
+    link: 'https://github.com/UXCorpRangel',
     iconName: 'socials/github',
-    style: {
-      '--bg': 'hsl(0 0% 12%)'
-    }
+    color: 'var(--github-color)'
   },
   {
     name: 'Discord',
-    link: '#discord',
+    link: 'https://discord.com/invite/6rfgHETy',
     iconName: 'socials/discord',
-    style: {
-      '--bg': 'hsl(235 86% 65%)'
-    }
+    color: 'var(--discord-color)'
   }
 ];
 ---
 
 <section class="hero">
   <div class="hero__title-container">
-    <h1 class="hero__title">
+    <p class="hero__title">
       Somos una <span class="hero__highlight">comunidad</span> vibrante de <span class="hero__highlight">diseñadores</span> y <span class="hero__highlight">desarrolladores</span> que
       colaboran en <span class="hero__highlight">proyectos</span> de código abierto.
-    </h1>
+    </p>
   </div>
 
   <div class="hero__social-container" aria-label="Redes sociales">
-    {socials.map(({ name, link, iconName, style }) => <LinkButton label={name} icon={iconName} link={link} bgColor={style['--bg']} textColor="#fff" />)}
+    {
+      socials.map(({ name, link, iconName, color }) => (
+        <LinkButton external label={name} icon={iconName} link={link} shadow="green" bgColor={color} textColor="var(--text-color)" />
+      ))
+    }
   </div>
 
   <div class="hero__logo">
@@ -48,6 +46,8 @@ const socials = [
 
 <style>
   .hero {
+    min-height: 100dvh;
+
     max-width: 1440px;
     margin-inline: auto;
     gap: 2rem;
@@ -80,11 +80,6 @@ const socials = [
   .hero__title-container {
     display: grid;
     align-items: end;
-  }
-
-  .hero__title,
-  .social-container--link {
-    font-family: var(--main-font-family);
   }
 
   .hero__title {
@@ -206,7 +201,6 @@ const socials = [
     }
   }
 
-  /* --- KEYFRAMES --- */
   @keyframes colorChange {
     0% {
       color: var(--highlight-color-1);
