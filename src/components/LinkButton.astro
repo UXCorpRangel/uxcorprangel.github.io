@@ -91,14 +91,30 @@ const linkButtonProps = external ? { target: '_blank', rel: 'noopener noreferrer
       transform 0.3s ease-in-out,
       box-shadow 0.3s ease-in-out;
 
+    &:focus,
     &:hover {
-      transform: translate(-4px, -2px);
+      transform: translateY(-2px) translateX(-4px);
 
       &.green-shadow {
         box-shadow: 4px 2px 0 0 var(--spring-green-color);
       }
       &.dark-shadow {
         box-shadow: 4px 2px 0 0 var(--alt-text-color);
+      }
+    }
+
+    &:focus-visible {
+      outline-width: 2px;
+      outline-style: dashed;
+      outline-offset: 0.5rem;
+      outline-color: currentColor;
+    }
+
+    &:active {
+      transform: translateX(4px) translateY(2px);
+      &.green-shadow,
+      &.dark-shadow {
+        box-shadow: 0 0 0 0 transparent;
       }
     }
 
