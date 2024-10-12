@@ -1,0 +1,199 @@
+---
+import LinkButton from '@components/LinkButton.astro';
+import UXCorpRangel from './UXCorpRangel.astro';
+import Harley from './Harley.astro';
+
+const socials = [
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/company/uxcorprangel',
+    iconName: 'socials/linkedin',
+    color: 'var(--linkedin-color)'
+  },
+  {
+    name: 'Github',
+    link: 'https://github.com/UXCorpRangel',
+    iconName: 'socials/github',
+    color: 'var(--github-color)'
+  },
+  {
+    name: 'Discord',
+    link: 'https://discord.com/invite/6rfgHETy',
+    iconName: 'socials/discord',
+    color: 'var(--discord-color)'
+  }
+];
+---
+
+<section class="hero" id="top">
+  <div class="hero-container">
+    <article class="hero-info-wrapper">
+      <p class="hero-info-desc">
+        Somos una <span class="hero-highlight">comunidad</span> vibrante de <span class="hero-highlight">diseñadores</span>
+        y <span class="hero-highlight">desarrolladores</span> que colaboran en
+        <span class="hero-highlight">proyectos</span> de código abierto.
+      </p>
+
+      <div class="hero-info-social" aria-label="Redes sociales">
+        {
+          socials.map(({ name, link, iconName, color }) => (
+            <LinkButton external label={name} icon={iconName} link={link} shadow="green" bgColor={color} textColor="var(--text-color)" />
+          ))
+        }
+      </div>
+    </article>
+
+    <div class="hero-logo-wrapper">
+      <div class="harley">
+        <Harley />
+        <div class="corp">
+          <UXCorpRangel />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  .hero {
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .hero-container {
+      width: min(80rem, 100vw);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8rem;
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+    }
+
+    & .hero-info-wrapper {
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      flex: 1;
+
+      & .hero-info-desc {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+
+        & .hero-highlight {
+          &:nth-child(1) {
+            animation: colorChange 5s infinite forwards;
+            animation-delay: 2s;
+          }
+          &:nth-child(2) {
+            animation: colorChange 5s infinite forwards;
+            animation-delay: 2.5s;
+          }
+          &:nth-child(3) {
+            animation: colorChange 5s infinite forwards;
+            animation-delay: 3s;
+          }
+          &:nth-child(4) {
+            animation: colorChange 5s infinite forwards;
+            animation-delay: 4s;
+          }
+        }
+      }
+
+      & .hero-info-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    & .hero-logo-wrapper {
+      background-color: var(--mauve-color);
+      border-radius: 1rem;
+      border: 4px solid var(--alt-text-color);
+      box-shadow: 6px 6px var(--spring-green-color);
+      padding: 4rem;
+      width: 458px;
+      min-width: 420px;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+
+      & .harley {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .corp {
+          animation: rotate-animation 60s infinite linear;
+          position: absolute;
+          z-index: -1;
+          color: var(--alt-text-color);
+        }
+      }
+    }
+  }
+
+  @keyframes colorChange {
+    0% {
+      color: var(--saffron-color);
+    }
+    25% {
+      color: var(--mauve-color);
+    }
+    50% {
+      color: var(--cinnabar-color);
+    }
+    75% {
+      color: var(--spring-green-color);
+    }
+    100% {
+      color: var(--saffron-color);
+    }
+  }
+
+  @keyframes rotate-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (width <= 768px) {
+    .hero {
+      & .hero-container {
+        flex-direction: column-reverse;
+        padding-top: 4rem;
+        gap: 4rem;
+      }
+
+      & .hero-info-wrapper {
+        max-width: 100%;
+
+        & .hero-info-desc {
+          text-align: center;
+        }
+      }
+
+      & .hero-logo-wrapper {
+        width: 100%;
+      }
+    }
+  }
+</style>
