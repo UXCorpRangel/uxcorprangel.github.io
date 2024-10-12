@@ -1,28 +1,9 @@
 ---
 import LinkButton from '@components/LinkButton.astro';
+import { uxSocials } from '@data/socials.data';
+
 import UXCorpRangel from './UXCorpRangel.astro';
 import Harley from './Harley.astro';
-
-const socials = [
-  {
-    name: 'LinkedIn',
-    link: 'https://www.linkedin.com/company/uxcorprangel',
-    iconName: 'socials/linkedin',
-    color: 'var(--linkedin-color)'
-  },
-  {
-    name: 'Github',
-    link: 'https://github.com/UXCorpRangel',
-    iconName: 'socials/github',
-    color: 'var(--github-color)'
-  },
-  {
-    name: 'Discord',
-    link: 'https://discord.com/invite/6rfgHETy',
-    iconName: 'socials/discord',
-    color: 'var(--discord-color)'
-  }
-];
 ---
 
 <section class="hero" id="hero">
@@ -36,8 +17,8 @@ const socials = [
 
       <div class="hero-info-social" aria-label="Redes sociales">
         {
-          socials.map(({ name, link, iconName, color }) => (
-            <LinkButton external label={name} icon={iconName} link={link} shadow="green" bgColor={color} textColor="var(--text-color)" />
+          uxSocials.map(({ icon, label, link, color }) => (
+            <LinkButton external label={label} icon={icon} link={link} shadow="green" bgColor={color} textColor="var(--text-color)" />
           ))
         }
       </div>
@@ -163,6 +144,7 @@ const socials = [
 
       & .hero-logo-wrapper {
         width: 100%;
+        scale: 0.72;
       }
     }
   }

@@ -1,5 +1,6 @@
 ---
 import Button from '@components/LinkButton.astro';
+import { DISCORD_URL } from '@data/socials.data';
 import Logo from './Logo.astro';
 
 const items = [
@@ -40,12 +41,13 @@ const items = [
     </nav>
 
     <Button
+      external
       shadow="green"
       label="Discord"
+      link={DISCORD_URL}
       icon="socials/discord"
       textColor="var(--text-color)"
       bgColor="var(--discord-color)"
-      link="https://discord.com/invite/6rfgHETy"
     />
   </div>
 </header>

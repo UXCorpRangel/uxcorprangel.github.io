@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { FooterItems } from './data.ts';
+import { uxSocials } from '@data/socials.data';
 ---
 
 <footer>
@@ -13,10 +13,10 @@ import { FooterItems } from './data.ts';
         <p>Síguenos</p>
         <ul class="socials-list">
           {
-            FooterItems.map(item => (
+            uxSocials.map(({ icon, label, link }) => (
               <li>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
-                  <Icon name={item.icon} width={24} height={24} />
+                <a href={link} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                  <Icon name={icon} width={24} height={24} />
                 </a>
               </li>
             ))
@@ -25,10 +25,18 @@ import { FooterItems } from './data.ts';
       </div>
       <div class="made-by-wrapper">
         <p class="made-by">
-          Hecho con <video width="24" src="/assets/video/heart.webm" preload="metadata" playsinline autoplay muted loop></video> por <span class="uxcorp">UXCorpRangel</span>
+          Hecho con <video width="24" src="/assets/video/heart.webm" preload="metadata" playsinline autoplay muted loop></video> por <span
+            class="uxcorp">UXCorpRangel</span
+          >
         </p>
         <p class="design-by">
-          Diseñado por <a href="https://facundodandrea.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Facundo D'Andrea" class="designer">Facundo D'Andrea</a>
+          Diseñado por <a
+            href="https://facundodandrea.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facundo D'Andrea"
+            class="designer">Facundo D'Andrea</a
+          >
         </p>
       </div>
     </div>
