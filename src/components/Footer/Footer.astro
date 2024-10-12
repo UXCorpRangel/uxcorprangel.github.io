@@ -1,69 +1,135 @@
+---
+import { Icon } from 'astro-icon/components';
+import { FooterItems } from './data.ts';
+---
+
 <footer>
   <div class="container">
-    <div>
-      <nav>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Guideline</a>
-      </nav>
-
-      <p>UX Corp Rangel © 2024 | All Rights Reserved.</p>
+    <div class="logo-uxcorp">
+      <img src="/assets/images/logo.webp" alt="Logo UXCorp" width={110} height={136} />
     </div>
+    <div class="socials-wrapper">
+      <div class="socials">
+        <p>Siguenos</p>
+        <ul class="socials-list">
+          {
+            FooterItems.map(item => (
+              <li>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
+                  <Icon name={item.icon} width={24} height={24} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="made-by-wrapper">
+        <p class="made-by">
+          Hecho con <video width="24" src="/assets/video/heart.webm" preload="metadata" playsinline autoplay muted loop></video> por <span class="uxcorp">UXCorpRangel</span>
+        </p>
+        <p class="design-by">
+          Diseñado por <a href="https://facundodandrea.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Facundo D'Andrea" class="designer">Facundo D'Andrea</a>
+        </p>
+      </div>
+    </div>
+    <img src="/assets/images/logo-ana.webp" alt="Logo Ana" width={144} height={93} class="logo-ana" />
   </div>
 </footer>
 
 <style>
   footer {
-    width: 100dvw;
-    padding-block: 2rem;
+    width: 100%;
     background-color: var(--alt-text-color);
+    color: var(--text-color);
+    padding-block: 48px;
+    position: relative;
+    min-height: 277px;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120vw;
+      height: 120vh;
+      inset-block-start: -50vh;
+      inset-inline-start: -12vw;
+
+      background-image: url('/assets/images/logo.webp');
+      background-repeat: space;
+      background-size: 3%;
+      rotate: 18deg;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
+
+      @media (width < 768px) {
+        background-size: 12%;
+        width: 150vw;
+        height: 125vh;
+      }
+    }
 
     & .container {
-      padding-inline: 1rem;
-      margin-inline: auto;
+      padding-block: 1.5rem;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      position: relative;
 
-      @media (width >= 1024px) {
-        padding-inline: 2rem;
-      }
-
-      & div {
+      & .socials-wrapper {
+        padding-inline: 5rem;
+        text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-
-        @media (width >= 768px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
+        gap: 1.5rem;
 
         @media (width < 768px) {
-          text-align: center;
-          justify-content: center;
+          padding-inline: 0;
         }
 
-        & nav {
-          display: flex;
-          flex-direction: column;
+        & .socials {
+          padding-block-end: 1rem;
+          & .socials-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 0.3rem;
 
-          @media (width >= 768px) {
-            margin-inline: auto;
-          }
-          @media (width < 768px) {
-            flex-direction: column;
-          }
-
-          & a {
-            padding-inline: 0.5rem;
-
-            @media (width < 640px) {
-              padding-block: 0.5rem;
+            & a {
+              cursor: pointer;
+              text-decoration: none;
+              color: currentColor;
             }
           }
         }
+        & .made-by {
+          font-weight: 500;
+          line-height: 1.25rem;
+          & .uxcorp {
+            font-weight: 700;
+            color: var(--persian-red-color);
+          }
+        }
 
-        & p {
-          margin: 0;
+        & .design-by {
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #abb1bb;
+          & .designer {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--violet-red-color);
+          }
+        }
+      }
+
+      & img {
+        @media (width < 768px) {
+          width: 78px;
         }
       }
     }
