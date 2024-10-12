@@ -107,7 +107,7 @@ const isPar = (num: number) => num % 2 === 0;
     data.map(({ name, img, tags, socials }, i) => (
       <div
         class="team__card"
-        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.5}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
+        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.9}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
       >
         <img src={`/assets/team/${img}.png`} alt={name} class="team__card-img" />
         <div class="team__card-info">
@@ -121,7 +121,7 @@ const isPar = (num: number) => num % 2 === 0;
               <span class="team__card-tag">{tag}</span>
             ))}
           </div>
-          <div class="team__card-tags">
+          <div class="team__card-social">
             {socials.map(({ name, link, nameIcon, color }) => (
               <LinkButton
                 external
@@ -147,9 +147,9 @@ const isPar = (num: number) => num % 2 === 0;
     min-height: 100dvh;
     max-width: 1129px;
     margin-inline: auto;
-    padding: clamp(1rem, 5vw, 4rem);
+    padding: 8rem clamp(1rem, 5vw, 4rem);
     position: relative;
-    --top-base: 12rem;
+    --top-base: 10rem;
     display: grid;
     gap: clamp(2rem, 10vw, 3rem);
 
@@ -203,6 +203,9 @@ const isPar = (num: number) => num % 2 === 0;
     flex: 2;
     padding: 1rem;
     color: #04011c;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 1rem;
 
     h2 {
       font-family: var(--main-font-family);
@@ -210,6 +213,7 @@ const isPar = (num: number) => num % 2 === 0;
       font-weight: 500;
       line-height: 80.8px;
       text-align: left;
+      order: 0;
     }
 
     p {
@@ -247,8 +251,12 @@ const isPar = (num: number) => num % 2 === 0;
   .team__card-tags {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
     flex-wrap: wrap;
+    align-items: center;
+
+    @media (--col-viewport) {
+      grid-row: 2;
+    }
   }
   .team__card-tag {
     background: #2e58ff;
@@ -261,5 +269,12 @@ const isPar = (num: number) => num % 2 === 0;
     padding: 0.5rem 0.6rem;
     color: #fff;
     text-transform: capitalize;
+  }
+
+  .team__card-social {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: end;
+    gap: 1rem;
   }
 </style>
