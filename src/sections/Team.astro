@@ -107,7 +107,7 @@ const isPar = (num: number) => num % 2 === 0;
     data.map(({ name, img, tags, socials }, i) => (
       <div
         class="team__card"
-        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.9}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
+        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.95}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
       >
         <img src={`/assets/team/${img}.png`} alt={name} class="team__card-img" />
         <div class="team__card-info">
