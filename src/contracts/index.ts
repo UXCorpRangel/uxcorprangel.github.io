@@ -1,1 +1,1 @@
-export * from './link.tipes';
+export * from './link.types';
