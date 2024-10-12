@@ -100,8 +100,8 @@ const view = (position: number) => {
 const isPar = (num: number) => num % 2 === 0;
 ---
 
-<section class="team">
-  <h2 class="team--title">EQUIPO</h2>
+<section id="equipo" class="team">
+  <h1 class="team--title">EQUIPO</h1>
 
   {
     data.map(({ name, img, tags, socials }, i) => (
@@ -144,12 +144,13 @@ const isPar = (num: number) => num % 2 === 0;
   @custom-media --col-viewport (max-width: 940px);
 
   .team {
-    min-height: 100dvh;
-    max-width: 1129px;
+    --top-base: 10rem;
+
+    min-height: 100vh;
+    width: min(80rem, 100vw);
     margin-inline: auto;
     padding: 8rem clamp(1rem, 5vw, 4rem);
     position: relative;
-    --top-base: 10rem;
     display: grid;
     gap: clamp(2rem, 10vw, 3rem);
 

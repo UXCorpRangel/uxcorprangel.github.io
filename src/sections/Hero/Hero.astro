@@ -25,7 +25,7 @@ const socials = [
 ];
 ---
 
-<section class="hero" id="top">
+<section class="hero" id="hero">
   <div class="hero-container">
     <article class="hero-info-wrapper">
       <p class="hero-info-desc">
@@ -54,10 +54,10 @@ const socials = [
   </div>
 </section>
 
-<style is:inline>
+<style>
   .hero {
-    min-height: 100dvh;
     width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
 
@@ -145,6 +145,26 @@ const socials = [
         }
       }
     }
+
+    @media (width <= 768px) {
+      & .hero-container {
+        flex-direction: column-reverse;
+        padding-top: 4rem;
+        gap: 4rem;
+      }
+
+      & .hero-info-wrapper {
+        max-width: 100%;
+
+        & .hero-info-desc {
+          text-align: center;
+        }
+      }
+
+      & .hero-logo-wrapper {
+        width: 100%;
+      }
+    }
   }
 
   @keyframes colorChange {
@@ -174,28 +194,6 @@ const socials = [
     }
     100% {
       transform: rotate(360deg);
-    }
-  }
-
-  @media (width <= 768px) {
-    .hero {
-      & .hero-container {
-        flex-direction: column-reverse;
-        padding-top: 4rem;
-        gap: 4rem;
-      }
-
-      & .hero-info-wrapper {
-        max-width: 100%;
-
-        & .hero-info-desc {
-          text-align: center;
-        }
-      }
-
-      & .hero-logo-wrapper {
-        width: 100%;
-      }
     }
   }
 </style>

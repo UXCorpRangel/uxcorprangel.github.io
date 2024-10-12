@@ -1,117 +1,404 @@
+---
+import Button from '@components/LinkButton.astro';
+import Logo from './Logo.astro';
+
+const items = [
+  { label: 'Inicio', link: '#' },
+  { label: 'Nosotros', link: '#sobre-nosotros' },
+  { label: 'Misión', link: '#mision' },
+  { label: 'Proyectos', link: '#proyectos' },
+  { label: 'Equipo', link: '#equipo' },
+  { label: 'Voluntarios', link: '#voluntarios' }
+];
+---
+
 <header class="navbar-wrapper">
   <div class="container">
-    <h1>UX Corp Rangel</h1>
+    <a class="logo" href={import.meta.env.SITE} aria-label="UX Corp Rangel">
+      <Logo height={90} />
+    </a>
 
-    <span>Boton</span>
+    <label class="burger" role="button">
+      <span class="wrapper">
+        <span class="bar"></span>
+        <input id="burger-input" type="checkbox" hidden />
+      </span>
+    </label>
 
-    <nav id="target-nav">
-      <ul>
-        <li>
-          <a href="#" class="active">Home</a>
-        </li>
-
-        <li>
-          <a href="#">About</a>
-        </li>
-
-        <li>
-          <a href="#">Works</a>
-        </li>
-
-        <li>
-          <a href="#">Blogs</a>
-        </li>
-
-        <li>
-          <a href="#">Contact</a>
-        </li>
+    <nav class="navbar">
+      <ul class="menu">
+        {
+          items.map(({ link, label }) => (
+            <li class="menu-item">
+              <a href={link} aria-label={label} data-slug={link.substring(1) || 'hero'}>
+                {label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
+
+    <Button
+      shadow="green"
+      label="Discord"
+      icon="socials/discord"
+      textColor="var(--text-color)"
+      bgColor="var(--discord-color)"
+      link="https://discord.com/invite/6rfgHETy"
+    />
   </div>
 </header>
 
 <style>
   header {
-    color: var(--alt-text-color);
-    padding-block: 1.25rem;
-    backdrop-filter: blur(12px);
-    background-color: rgb(from var(--text-color) r g b / 0.9);
-    border-style: solid;
-    border-color: var(--alt-text-color);
-    border-block-width: 2px;
-    height: 96px;
     z-index: 40;
+    width: 100vw;
+    height: 7.75rem;
 
     position: sticky;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
+    inset-inline: 0;
+    inset-block-start: 0;
 
-    inset-inline: 0px;
-    inset-block-start: 0px;
+    color: var(--alt-text-color);
+    backdrop-filter: blur(0.75rem);
+    border-block-end: 0.125rem solid var(--text-color);
+    background-color: rgb(from var(--bg-color) r g b / 0.9);
 
     & .container {
-      width: 100%;
+      height: 100%;
+      width: min(80rem, 100vw);
+      padding-block: 1rem;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-inline: 1rem;
       margin-inline: auto;
+      gap: 1.5rem;
 
-      @media (width >= 1024px) {
-        padding-inline: 2rem;
-      }
+      & .logo {
+        position: relative;
+        text-decoration: none;
+        color: var(--text-color);
 
-      & h1 {
-        font-weight: 800;
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-      }
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-property: filter, transform;
 
-      #target-nav {
-        text-transform: uppercase;
-        transition-duration: 300ms;
-        transform: translate(var(--translate-x), 0);
+        &::after {
+          content: 'WOOF!';
+          font-size: 1.5rem;
+          pointer-events: none;
+          font-family: var(--header-font-family);
 
-        @media (width < 1024px) {
-          --translate-x: -100%;
-          width: 18rem;
-          z-index: 50;
-          background-color: var(--text-color);
-          border-color: var(--alt-text-color);
-          border-right-width: 2px;
-          position: fixed;
-          inset-inline-start: 0px;
-          inset-block: 0px;
+          color: var(--text-color);
+          -webkit-text-stroke: 1px var(--alt-text-color);
+          filter: drop-shadow(3px 3px 0px var(--cinnabar-color));
+
+          opacity: 0;
+          position: absolute;
+          inset-block-start: 50%;
+          inset-inline-start: 0;
+          transform: translateY(-50%) scale(0);
+
+          transition-duration: 0.3s;
+          transition-timing-function: ease-in-out;
+          transition-property: opacity, inset-block-start, inset-inline-start, transform;
         }
 
-        & nav {
-          @media (width < 1024px) {
-            height: 100%;
-            overflow: auto;
-            display: flex;
-            flex-direction: column;
-          }
+        &:focus::after,
+        &:hover::after {
+          opacity: 1;
+          inset-block-start: 3%;
+          inset-inline-start: 93%;
+          transform: rotate(-30deg) skew(-30deg) scale(1);
+        }
 
-          @media (width >= 1024px) {
-            margin-inline-start: 1rem;
-          }
+        &:focus-visible {
+          outline: none;
+          transform: translate(-2px, -2px);
+          filter: drop-shadow(3px 3px 0px var(--cinnabar-color));
+        }
+      }
 
-          a {
-            @media (width < 1024px) {
-              padding-block: 0.75rem;
-              padding-inline: 1rem;
-              border-color: var(--alt-text-color);
-              border-block-end-width: 1px;
+      & .navbar {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        & .menu {
+          gap: 1.25rem;
+          display: inline-flex;
+
+          & .menu-item {
+            &::before {
+              display: none;
             }
 
-            &:hover,
-            &.active {
-              color: rgb(0 166 162);
+            & a {
+              height: 100%;
+              font-weight: 500;
+              font-size: 1.25rem;
+              position: relative;
+              display: inline-block;
+              text-decoration: none;
+              color: var(--text-color);
+
+              transition: color 0.3s ease-in-out;
+
+              &::before {
+                content: '';
+                width: 100%;
+                height: 0.125rem;
+                pointer-events: none;
+                background-color: currentColor;
+
+                position: absolute;
+                inset-inline: 0;
+                inset-block-end: 0;
+
+                scale: 0;
+                transition: scale 0.6s ease-in-out;
+              }
+
+              &:focus-visible,
+              &:hover {
+                color: var(--saffron-color);
+              }
+
+              &:focus-visible {
+                border-radius: 0.25rem;
+                outline-width: 2px;
+                outline-style: dashed;
+                outline-offset: 0.5rem;
+                outline-color: var(--saffron-color);
+              }
+
+              &:active,
+              &.active:active {
+                color: var(--cinnabar-color);
+              }
+
+              &.active {
+                color: var(--spring-green-color);
+
+                &::before {
+                  scale: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & .burger {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+
+        box-shadow: 0 0 0 0 transparent;
+        background-color: var(--text-color);
+        border: 2px solid var(--alt-text-color);
+
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: url(/assets/images/cursor/cursor-pointer.png), pointer;
+
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-property: transform, box-shadow;
+
+        &:hover {
+          transform: translateY(-2px) translateX(-4px);
+          box-shadow: 4px 2px 0 0 var(--spring-green-color);
+        }
+
+        &:active {
+          transform: translateX(4px) translateY(2px);
+          box-shadow: 0 0 0 0 transparent;
+
+          cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
+        }
+
+        & .wrapper {
+          width: 2rem;
+          height: 1.5rem;
+          position: relative;
+
+          display: inline-block;
+          color: var(--alt-text-color);
+
+          transition: transform 0.3s ease-in-out;
+
+          &::before,
+          &::after,
+          & .bar::before,
+          & .bar::after {
+            content: '';
+            width: 100%;
+            height: 0.27rem;
+            display: block;
+            border-radius: 0.5625rem;
+            background-color: currentColor;
+            opacity: 1;
+            position: absolute;
+            inset-inline: 0;
+
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in-out;
+            transition-property: opacity, transform, inset-block;
+          }
+
+          &::before {
+            inset-block-start: 0;
+          }
+
+          &::after {
+            inset-block-end: 0;
+          }
+
+          .bar::before,
+          .bar::after {
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+          }
+
+          & input[type='checkbox'] {
+            display: none;
+          }
+
+          &:has(input[type='checkbox']:checked) {
+            transform: translateY(-0.125rem);
+
+            &:before,
+            &:after {
+              opacity: 0;
+            }
+
+            &:before {
+              inset-block-start: -0.25rem;
+            }
+
+            &::after {
+              inset-block-end: -0.25rem;
+            }
+
+            & .bar {
+              &::before {
+                transform: rotate(45deg);
+              }
+              &::after {
+                transform: rotate(-45deg);
+              }
             }
           }
         }
       }
     }
+
+    @media (width >= 1024px) {
+      & .container {
+        padding-inline: 2rem;
+      }
+    }
+
+    @media (width < 768px) {
+      position: sticky;
+      inset-inline: 0;
+      inset-block-start: -1px;
+
+      & .container {
+        position: relative;
+        padding-inline: 3rem;
+
+        & .navbar {
+          display: flex;
+          position: absolute;
+          inset-inline: 0;
+          inset-block-start: 7.75rem;
+          height: calc(108vh - 7.75rem);
+          background-color: rgb(from var(--alt-text-color) r g b / 0.99);
+
+          scale: 0;
+          transform-origin: 100% 0;
+          transition: scale 0.3s ease-in-out;
+
+          .burger:has(input[type='checkbox']:checked) ~ & {
+            scale: 1;
+          }
+
+          & .menu {
+            gap: 2.7rem;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            margin-block-start: -8vh;
+
+            & .menu-item a {
+              font-size: 2rem;
+              font-weight: 900;
+            }
+          }
+        }
+
+        & .burger {
+          order: 1;
+          display: inline-flex;
+        }
+      }
+    }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll<HTMLElement>('main section');
+    const navItems = document.querySelectorAll<HTMLAnchorElement>('.menu-item a');
+    const burgerToggle = document.querySelector<HTMLInputElement>('#burger-input');
+
+    function intersectionCallback(entries: IntersectionObserverEntry[]) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navItems.forEach(item => {
+            if (item.dataset.slug === entry.target.id) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: null,
+      rootMargin: '-100px',
+      threshold: 0.3
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect();
+      } else {
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      }
+    };
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (burgerToggle) {
+          burgerToggle.checked = false;
+        }
+      });
+    });
+  });
+</script>
