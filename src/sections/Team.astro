@@ -1,0 +1,265 @@
+---
+import LinkButton from '@components/LinkButton.astro';
+
+const data = [
+  {
+    name: 'Ana Rangel',
+    img: 'ana-rangel',
+    tags: ['dev'],
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Ricardo Cuauro',
+    img: 'ricardo-cuauro',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Felix Icaza',
+    img: 'felix-icaza',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Samuel Llibre-Pillco',
+    img: 'samuel-llibre-pillco',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Jaime Gutiérrez',
+    img: 'jaime-gutierrez',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Omar Aguirre',
+    img: 'omar-aguirre',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  },
+  {
+    name: 'Alfonsina Lizardo',
+    img: 'alfonsina-lizardo',
+    tags: ['dev'],
+
+    socials: [
+      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
+      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
+      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
+      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--instagram-color)' }
+    ]
+  }
+];
+
+const total = data.length;
+
+const view = (position: number) => {
+  const calc = (100 * (position + 10)) / (total + 10) / 100;
+  const minmax = (value: number, min: number, max: number) => {
+    return Math.min(Math.max(value, min), max);
+  };
+  return minmax(calc, 0, 1);
+};
+
+const isPar = (num: number) => num % 2 === 0;
+---
+
+<section class="team">
+  <h2 class="team--title">EQUIPO</h2>
+
+  {
+    data.map(({ name, img, tags, socials }, i) => (
+      <div
+        class="team__card"
+        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.5}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
+      >
+        <img src={`/assets/team/${img}.png`} alt={name} class="team__card-img" />
+        <div class="team__card-info">
+          <h2>{name}</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus
+            semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est.
+          </p>
+          <div class="team__card-tags">
+            {tags.map(tag => (
+              <span class="team__card-tag">{tag}</span>
+            ))}
+          </div>
+          <div class="team__card-tags">
+            {socials.map(({ name, link, nameIcon, color }) => (
+              <LinkButton
+                external
+                label={name}
+                icon={`socials/${nameIcon}`}
+                link={link}
+                shadow="green"
+                bgColor={color}
+                textColor="var(--text-color)"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  @custom-media --col-viewport (max-width: 940px);
+
+  .team {
+    min-height: 100dvh;
+    max-width: 1129px;
+    margin-inline: auto;
+    padding: clamp(1rem, 5vw, 4rem);
+    position: relative;
+    --top-base: 12rem;
+    display: grid;
+    gap: clamp(2rem, 10vw, 3rem);
+
+    .team--title {
+      font-family: Titan One;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 80.15px;
+      text-align: center;
+      position: sticky;
+      top: calc(var(--top-base) / 2);
+
+      @media (--col-viewport) {
+        position: initial;
+      }
+    }
+  }
+
+  .team__card {
+    position: sticky;
+    display: flex;
+    background: var(--mauve-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 4px 4px 0px 0px #39ed81;
+    border: 2px solid #04011c;
+
+    @media (--col-viewport) {
+      flex-direction: column;
+      max-width: 400.99px;
+      margin-inline: auto;
+      position: initial !important;
+    }
+  }
+
+  .team__card-img {
+    order: var(--order);
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    border: solid #04011c;
+    border-width: var(--border-img);
+    max-width: 425px;
+
+    @media (--col-viewport) {
+      border-width: 0 0 2px 0;
+      order: 0;
+    }
+  }
+
+  .team__card-info {
+    flex: 2;
+    padding: 1rem;
+    color: #04011c;
+
+    h2 {
+      font-family: var(--main-font-family);
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 80.8px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 25.5px;
+      max-width: 666px;
+    }
+  }
+
+  .team__card {
+    animation-name: scale;
+    animation-duration: 1ms;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timeline: view(6rem 6.1rem);
+    transform-origin: 50% 4.5rem;
+
+    @media (--col-viewport) {
+      animation: none;
+      animation-timeline: none;
+      position: relative;
+    }
+  }
+
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(var(--scale-to));
+    }
+  }
+
+  .team__card-tags {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .team__card-tag {
+    background: #2e58ff;
+    border: 2px solid #04011c;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 10.75px;
+    border-radius: 9999px;
+    box-shadow: 4px 4px 0px 0px #04011c;
+    padding: 0.5rem 0.6rem;
+    color: #fff;
+    text-transform: capitalize;
+  }
+</style>
