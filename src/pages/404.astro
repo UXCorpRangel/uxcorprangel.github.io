@@ -3,10 +3,18 @@ import Layout from '@layouts/Layout.astro';
 import UXCorpRangel from '../sections/Hero/UXCorpRangel.astro';
 import Harley from '../sections/Hero/Harley.astro';
 import LinkButton from '@components/LinkButton.astro';
-import quotes from '../data/quotes-404';
-
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]; // Selecciona una cita aleatoria
 ---
+
+<script>
+  import quotes from '@data/quotes-404';
+
+  const frases = quotes;
+  const randomQuote = frases[Math.floor(Math.random() * quotes.length)];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('quote').textContent = randomQuote;
+  });
+</script>
 
 <Layout title="UX Corp Rangel - 404" description="Astro description">
   <main>
@@ -21,7 +29,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]; // Selecc
         </div>
         <span>4</span>
       </div>
-      <p class="">{randomQuote}</p>
+      <p id="quote"></p>
       <LinkButton link="/" label="Inicio" icon="chevron-up" shadow="green" bgColor="var(--saffron-color)" textColor="var(--alt-text-color)" />
     </section>
   </main>
@@ -97,7 +105,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]; // Selecc
 
       span {
         font-size: 80px;
-        text-align: center; /* Centra el texto si es necesario */
+        text-align: center;
       }
     }
   }
