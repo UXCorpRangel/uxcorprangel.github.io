@@ -28,7 +28,7 @@ import Harley from './Harley.astro';
       <div class="harley">
         <Harley />
         <div class="corp">
-          <UXCorpRangel />
+          <UXCorpRangel width={380} height={380} />
         </div>
       </div>
     </div>
@@ -111,10 +111,11 @@ import Harley from './Harley.astro';
       z-index: -2;
 
       & .harley {
-        position: relative;
+        color: #fff;
         height: 100%;
         width: 100%;
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
 
