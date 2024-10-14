@@ -1,105 +1,111 @@
 ---
-import Layout from '@layouts/Base.astro';
-import UXCorpRangel from '@sections/Hero/UXCorpRangel.astro';
-import Harley from '@sections/Hero/Harley.astro';
+import Layout from '@layouts/Layout.astro';
+import UXCorpRangel from '../sections/Hero/UXCorpRangel.astro';
+import Harley from '../sections/Hero/Harley.astro';
 import LinkButton from '@components/LinkButton.astro';
 ---
+
+<script>
+  import quotes from '@data/quotes-404';
+
+  const frases = quotes;
+  const randomQuote = frases[Math.floor(Math.random() * quotes.length)];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('quote').textContent = randomQuote;
+  });
+</script>
 
 <Layout title="UX Corp Rangel - 404" description="Astro description">
   <main>
     <section class="section-404">
       <div class="logo-wrapper">
         <span>4</span>
-
-        <div class="harley" role="button">
+        <div class="harley">
           <Harley />
-
           <div class="corp">
-            <UXCorpRangel width="width" height="height" />
+            <UXCorpRangel />
           </div>
         </div>
-
         <span>4</span>
       </div>
-
       <p id="quote"></p>
-
-      <LinkButton link="/" label="Inicio" icon="home" shadow="green" bgColor="var(--link-bg-color)" textColor="var(--text-color)" />
+      <LinkButton link="/" label="Inicio" icon="chevron-up" shadow="green" bgColor="var(--saffron-color)" textColor="var(--alt-text-color)" />
     </section>
   </main>
 </Layout>
 
 <style>
-  main {
-    height: 100vh;
-    width: min(80rem, 100vw);
-
-    display: grid;
-    place-items: center;
-  }
-
   .section-404 {
-    gap: 2rem;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 4rem;
 
-    & #quote {
-      min-height: 2rem;
-      font-size: 1.5rem;
+    span {
+      font-size: 400px;
+    }
+
+    p {
       text-align: center;
+      font-size: 24px;
     }
 
     .logo-wrapper {
-      gap: 4rem;
       display: flex;
-      user-select: none;
-      align-items: center;
       justify-content: center;
-
-      & span {
-        font-size: 24rem;
-        font-family: var(--header-font-family);
-      }
+      align-items: center;
+      z-index: -2;
+      gap: 4rem;
 
       & .harley {
-        display: flex;
         position: relative;
-        align-items: center;
+        height: 100%;
+        width: 100%;
+        max-width: 376px;
+        display: flex;
         justify-content: center;
-        cursor: url(/assets/images/cursor/cursor-pointer.png), pointer;
-
-        &:active {
-          cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
-        }
+        align-items: center;
 
         & .corp {
           width: 150%;
-          z-index: -1;
-          position: absolute;
-          pointer-events: none;
           animation: rotate-animation 60s infinite linear;
+          position: absolute;
+          z-index: -1;
+          color: var(--text-color);
         }
       }
     }
+  }
 
-    @media (width < 768px) {
-      gap: 1rem;
-      margin-inline: 2rem;
+  @media (max-width: 768px) {
+    .section-404 {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
 
-      & .logo-wrapper {
-        gap: 2rem;
+      .logo-wrapper {
+        max-width: 90%;
+        gap: 1rem;
         display: flex;
         flex-wrap: wrap;
 
         & .harley {
+          height: auto;
+          width: 100%;
           max-width: 30%;
-        }
+          margin: 0 auto;
 
-        & span {
-          font-size: 8.5rem;
+          & .corp {
+            width: 140%;
+          }
         }
+      }
+
+      span {
+        font-size: 80px;
+        text-align: center;
       }
     }
   }
@@ -116,17 +122,3 @@ import LinkButton from '@components/LinkButton.astro';
     }
   }
 </style>
-
-<script>
-  import { getRandom404Quote } from '@data/quotes-404';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const quoteElement = document.getElementById('quote');
-    function changeQuote() {
-      quoteElement!.textContent = getRandom404Quote();
-    }
-
-    changeQuote();
-    document.querySelector('.harley')?.addEventListener('click', changeQuote);
-  });
-</script>
