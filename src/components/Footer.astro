@@ -5,7 +5,7 @@ import { uxSocials } from '@data/socials.data';
 
 <footer>
   <div class="container">
-    <div class="logo-uxcorp">
+    <div class="logo-uxcorp" role="button">
       <img src="/assets/images/logo.webp" alt="Logo UXCorp" width={110} height={136} loading="lazy" />
     </div>
 
@@ -84,6 +84,47 @@ import { uxSocials } from '@data/socials.data';
       align-items: center;
       padding-block: 1.5rem;
       justify-content: center;
+
+      & .logo-uxcorp {
+        position: relative;
+        filter: drop-shadow(0 0 1rem transparent);
+        cursor: url(/assets/images/cursor/cursor-pointer.png), pointer;
+
+        transition: filter 0.3s ease-in-out;
+
+        &:active {
+          filter: drop-shadow(0 0 1rem var(--cinnabar-color));
+          cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
+        }
+
+        &::after {
+          content: 'WOOF!';
+          font-size: 1.5rem;
+          pointer-events: none;
+          font-family: var(--header-font-family);
+
+          position: absolute;
+          color: var(--text-color);
+          -webkit-text-stroke: 1px var(--alt-text-color);
+          filter: drop-shadow(3px 3px 0px var(--cinnabar-color));
+
+          opacity: 0;
+          inset-block-start: 50%;
+          inset-inline-start: 0;
+          transform: translateY(-50%) scale(0);
+
+          transition-duration: 0.3s;
+          transition-timing-function: ease-in-out;
+          transition-property: opacity, inset-block-start, inset-inline-start, transform;
+        }
+
+        &.woof::after {
+          opacity: 1;
+          inset-block-start: 3%;
+          inset-inline-start: 93%;
+          transform: rotate(-30deg) skew(-30deg) scale(1);
+        }
+      }
 
       & .socials-wrapper {
         gap: 1.5rem;
@@ -191,3 +232,19 @@ import { uxSocials } from '@data/socials.data';
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const logoUxcorp = document.querySelector('.logo-uxcorp');
+
+    logoUxcorp?.addEventListener('click', () => {
+      const audio = new Audio('/assets/audio/woof.ogg');
+      logoUxcorp.classList.add('woof');
+      audio.addEventListener('ended', () => {
+        logoUxcorp.classList.remove('woof');
+      });
+
+      audio.play();
+    });
+  });
+</script>
