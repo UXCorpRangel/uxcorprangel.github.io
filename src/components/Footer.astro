@@ -6,8 +6,9 @@ import { uxSocials } from '@data/socials.data';
 <footer>
   <div class="container">
     <div class="logo-uxcorp">
-      <img src="/assets/images/logo.webp" alt="Logo UXCorp" width={110} height={136} />
+      <img src="/assets/images/logo.webp" alt="Logo UXCorp" width={110} height={136} loading="lazy" />
     </div>
+
     <div class="socials-wrapper">
       <div class="socials">
         <p>Síguenos</p>
@@ -23,24 +24,27 @@ import { uxSocials } from '@data/socials.data';
           }
         </ul>
       </div>
+
       <div class="made-by-wrapper">
         <p class="made-by">
           Hecho con <video width="24" src="/assets/video/heart.webm" preload="metadata" playsinline autoplay muted loop></video> por <span
             class="uxcorp">UXCorpRangel</span
           >
         </p>
+
         <p class="design-by">
           Diseñado por <a
-            href="https://facundodandrea.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facundo D'Andrea"
+            href="https://facundodandrea.vercel.app"
             class="designer">Facundo D'Andrea</a
           >
         </p>
       </div>
     </div>
-    <img src="/assets/images/logo-ana.webp" alt="Logo de UX Ana Rangel" width={144} height={93} class="logo-ana" />
+
+    <img src="/assets/images/logo-ana.webp" alt="Logo de UX Ana Rangel" width={144} height={93} class="logo-ana" loading="lazy" />
   </div>
 </footer>
 
@@ -70,75 +74,118 @@ import { uxSocials } from '@data/socials.data';
       opacity: 0.1;
       z-index: 0;
       pointer-events: none;
-
-      @media (width < 768px) {
-        background-size: 12%;
-        width: 150vw;
-        height: 125vh;
-      }
     }
 
     & .container {
-      padding-block: 1.5rem;
+      z-index: 1;
       width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
       position: relative;
+      align-items: center;
+      padding-block: 1.5rem;
+      justify-content: center;
 
       & .socials-wrapper {
-        padding-inline: 5rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
         gap: 1.5rem;
-
-        @media (width < 768px) {
-          padding-inline: 0;
-        }
+        display: flex;
+        text-align: center;
+        padding-inline: 5rem;
+        flex-direction: column;
 
         & .socials {
+          gap: 0.5rem;
+          display: flex;
+          flex-direction: column;
           padding-block-end: 1rem;
+
           & .socials-list {
+            gap: 0.75rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
             list-style: none;
-            gap: 0.3rem;
+            align-items: center;
+            justify-content: center;
 
             & a {
-              cursor: pointer;
-              text-decoration: none;
               color: currentColor;
+              text-decoration: none;
+              transition: color 0.3s ease-in-out;
+
+              &:focus,
+              &:hover {
+                color: var(--spring-green-color);
+              }
+
+              &:focus-visible {
+                border-radius: 0.25rem;
+                outline: 2px dashed var(--spring-green-color);
+              }
+
+              &:active {
+                color: var(--violet-red-color);
+              }
             }
           }
         }
-        & .made-by {
-          font-weight: 500;
-          line-height: 1.25rem;
-          & .uxcorp {
-            font-weight: 700;
-            color: var(--persian-red-color);
-          }
-        }
 
-        & .design-by {
-          font-weight: 400;
-          font-size: 0.875rem;
-          line-height: 1.25rem;
-          color: #abb1bb;
-          & .designer {
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--violet-red-color);
+        & .made-by-wrapper {
+          gap: 0.5rem;
+          display: flex;
+          flex-direction: column;
+
+          & .made-by {
+            font-weight: 500;
+
+            & .uxcorp {
+              font-weight: 700;
+              color: var(--persian-red-color);
+            }
+          }
+
+          & .design-by {
+            color: #abb1bb;
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+
+            & .designer {
+              font-weight: 700;
+              text-decoration: none;
+              color: var(--violet-red-color);
+              transition: color 0.3s ease-in-out;
+
+              &:focus,
+              &:hover {
+                color: var(--spring-green-color);
+              }
+
+              &:focus-visible {
+                border-radius: 0.25rem;
+                outline: 2px dashed var(--spring-green-color);
+              }
+
+              &:active {
+                color: var(--saffron-color);
+              }
+            }
           }
         }
       }
+    }
 
-      & img {
-        @media (width < 768px) {
-          width: 78px;
+    @media (width < 768px) {
+      &::before {
+        width: 150vw;
+        height: 125vh;
+        background-size: 6%;
+      }
+
+      & .container {
+        & .socials-wrapper {
+          padding-inline: 0;
+        }
+
+        & img {
+          width: 4.875rem;
         }
       }
     }
