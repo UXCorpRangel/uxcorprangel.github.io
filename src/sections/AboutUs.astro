@@ -32,6 +32,11 @@
     align-items: center;
     color: var(--alt-text-color);
 
+    p,
+    p * {
+      cursor: url(/assets/images/cursor/cursor-text.png), text;
+    }
+
     & .container {
       width: min(80rem, 100vw);
 
@@ -40,10 +45,12 @@
       }
 
       & header {
+        display: flex;
+        justify-content: center;
+
         & h1 {
           font-weight: 400;
           font-size: 4.375rem;
-          text-align: center;
           margin-bottom: 4rem;
 
           & span {
@@ -70,8 +77,10 @@
 
         & blockquote {
           width: 90%;
+          display: flex;
           text-align: center;
-          margin: 0 auto;
+          flex-direction: column;
+          align-items: center;
 
           & .quote {
             font-weight: 400;
