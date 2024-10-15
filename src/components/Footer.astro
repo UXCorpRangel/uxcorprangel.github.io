@@ -92,7 +92,7 @@ import { uxSocials } from '@data/socials.data';
 
         transition: filter 0.3s ease-in-out;
 
-        &:active {
+        &:hover {
           filter: drop-shadow(0 0 1rem var(--cinnabar-color));
           cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
         }
@@ -234,17 +234,6 @@ import { uxSocials } from '@data/socials.data';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const logoUxcorp = document.querySelector('.logo-uxcorp');
-
-    logoUxcorp?.addEventListener('click', () => {
-      const audio = new Audio('/assets/audio/woof.ogg');
-      logoUxcorp.classList.add('woof');
-      audio.addEventListener('ended', () => {
-        logoUxcorp.classList.remove('woof');
-      });
-
-      audio.play();
-    });
-  });
+  import woof from '@scripts/woof';
+  woof(document.querySelector('.logo-uxcorp'));
 </script>

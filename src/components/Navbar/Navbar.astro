@@ -356,6 +356,11 @@ const items = [
 </style>
 
 <script>
+  import woof from '@scripts/woof';
+  woof(document.querySelector('.logo'));
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll<HTMLElement>('main section');
     const navItems = document.querySelectorAll<HTMLAnchorElement>('.menu-item a');
