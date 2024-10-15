@@ -76,6 +76,10 @@ import Button from '@components/LinkButton.astro';
     align-items: center;
     gap: 2rem;
 
+    @media (width < 768px) {
+      padding: 0;
+    }
+
     & .container {
       width: min(80rem, 100vw);
 
@@ -108,7 +112,7 @@ import Button from '@components/LinkButton.astro';
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: 3rem;
       }
     }
   }
