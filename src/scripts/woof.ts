@@ -1,6 +1,7 @@
 export default function woof(element: Element | null) {
   function debounce<T extends (...args: never[]) => void>(fn: T, delay: number): (...args: Parameters<T>) => void {
     let timeoutId: number | undefined;
+
     return function (this: never, ...args: Parameters<T>) {
       if (timeoutId) {
         clearTimeout(timeoutId);
