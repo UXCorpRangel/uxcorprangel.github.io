@@ -154,6 +154,10 @@ const isPar = (num: number) => num % 2 === 0;
     display: grid;
     gap: clamp(2rem, 10vw, 3rem);
 
+    @media (--col-viewport) {
+      padding: 0;
+    }
+
     .team--title {
       font-family: Titan One;
       font-size: 70px;
