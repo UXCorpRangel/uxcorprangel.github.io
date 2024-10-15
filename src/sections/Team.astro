@@ -141,7 +141,7 @@ const isPar = (num: number) => num % 2 === 0;
 </section>
 
 <style>
-  @custom-media --col-viewport (max-width: 940px);
+  @custom-media --col-viewport (width < 940px);
 
   .team {
     --top-base: 10rem;
@@ -180,7 +180,7 @@ const isPar = (num: number) => num % 2 === 0;
 
     @media (--col-viewport) {
       flex-direction: column;
-      max-width: 400.99px;
+      width: 90%;
       margin-inline: auto;
       position: initial !important;
     }
@@ -207,6 +207,10 @@ const isPar = (num: number) => num % 2 === 0;
     display: grid;
     grid-template-rows: auto auto auto 1fr;
     gap: 1rem;
+
+    @media (--col-viewport) {
+      text-align: center;
+    }
 
     h2 {
       font-family: var(--main-font-family);
@@ -277,5 +281,9 @@ const isPar = (num: number) => num % 2 === 0;
     flex-wrap: wrap;
     align-self: end;
     gap: 1rem;
+
+    @media (--col-viewport) {
+      justify-content: center;
+    }
   }
 </style>
