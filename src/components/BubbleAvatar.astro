@@ -1,0 +1,32 @@
+---
+import LinkButton from './LinkButton.astro';
+---
+
+<div class="bubble">
+  <img src="./assets/images/volunteers/facu.webp" alt="volunteer" class="avatar-volunteer" />
+  <div class="buttons-volunteer">
+    <LinkButton link="/" label="LinkedIn" icon="socials/linkedin" shadow="green" bgColor="var(--linkedin-color)" textColor="var(--text-color)" />
+    <LinkButton link="/" label="GitHub" icon="socials/github" shadow="green" bgColor="var(--linkedin-color)" textColor="var(--text-color)" />
+  </div>
+</div>
+
+<style>
+  .bubble {
+    width: 131px;
+    position: absolute;
+    top: 25px;
+
+    .avatar-volunteer {
+      border-radius: 100%;
+      border: 1px solid var(--spring-green-color);
+    }
+
+    .buttons-volunteer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      top: -20px;
+    }
+  }
+</style>
