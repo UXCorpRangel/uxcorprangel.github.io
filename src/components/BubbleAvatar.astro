@@ -1,20 +1,27 @@
 ---
 import LinkButton from './LinkButton.astro';
+
+const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
 ---
 
 <div class="bubble">
-  <img src="./assets/images/volunteers/facu.webp" alt="volunteer" class="avatar-volunteer" />
+  <img src={imageSrc} alt={altText} class="avatar-volunteer" />
   <div class="buttons-volunteer">
-    <LinkButton link="/" label="LinkedIn" icon="socials/linkedin" shadow="green" bgColor="var(--linkedin-color)" textColor="var(--text-color)" />
-    <LinkButton link="/" label="GitHub" icon="socials/github" shadow="green" bgColor="var(--linkedin-color)" textColor="var(--text-color)" />
+    <LinkButton
+      link={linkedinLink}
+      label="LinkedIn"
+      icon="socials/linkedin"
+      shadow="green"
+      bgColor="var(--linkedin-color)"
+      textColor="var(--text-color)"
+    />
+    <LinkButton link={githubLink} label="GitHub" icon="socials/github" shadow="green" bgColor="var(--github-color)" textColor="var(--text-color)" />
   </div>
 </div>
 
 <style>
   .bubble {
     width: 131px;
-    position: absolute;
-    top: 25px;
 
     .avatar-volunteer {
       border-radius: 100%;
