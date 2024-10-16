@@ -4,18 +4,18 @@ import { DISCORD_URL } from '@data/socials.data';
 import Logo from './Logo.astro';
 
 const items = [
-  { label: 'Inicio', link: '#' },
-  { label: 'Nosotros', link: '#sobre-nosotros' },
-  { label: 'Misión', link: '#mision' },
-  { label: 'Proyectos', link: '#proyectos' },
-  { label: 'Equipo', link: '#equipo' },
-  { label: 'Voluntarios', link: '#voluntarios' }
+  { label: 'Inicio', link: '/' },
+  { label: 'Nosotros', link: '/#sobre-nosotros' },
+  { label: 'Misión', link: '/#mision' },
+  { label: 'Proyectos', link: '/proyectos' },
+  { label: 'Equipo', link: '/#equipo' },
+  { label: 'Voluntarios', link: '/#voluntarios' }
 ];
 ---
 
 <header class="navbar-wrapper">
   <div class="container">
-    <a class="logo" href={import.meta.env.SITE} aria-label="UX Corp Rangel">
+    <a class="logo" href="/" aria-label="UX Corp Rangel">
       <Logo height={90} />
     </a>
 
