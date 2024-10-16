@@ -131,8 +131,8 @@ import Harley from './Harley.astro';
     @media (width <= 768px) {
       & .hero-container {
         flex-direction: column-reverse;
-        padding-top: 4rem;
-        gap: 4rem;
+        padding-bottom: 4rem;
+        gap: 0.5rem;
       }
 
       & .hero-info-wrapper {
@@ -140,6 +140,10 @@ import Harley from './Harley.astro';
 
         & .hero-info-desc {
           text-align: center;
+        }
+
+        & .hero-info-social {
+          justify-content: center;
         }
       }
 
