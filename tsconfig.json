@@ -18,6 +18,9 @@
       "@layouts/*": ["./src/layouts/*"],
       "@layouts": ["./src/layouts"],
 
+      "@scripts/*": ["./src/scripts/*"],
+      "@scripts": ["./src/scripts"],
+
       "@sections/*": ["./src/sections/*"],
       "@sections": ["./src/sections"]
     }
