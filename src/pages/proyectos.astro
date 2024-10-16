@@ -10,110 +10,171 @@ import Layout from '@layouts/Layout.astro';
 <Layout title="UX Corp Rangel - Proyectos" description="Proyectos realizados en comunidad">
   <main>
     <section class="projects-wrapper">
-      <ProjectCard
-        className="project-principal"
-        desc="Este proyecto fue el primer proyecto desarrollado en comunidad dándole lugar a personas con poca o nula experiencia trabajando en equipo"
-        title="Portfolio Ana Rangel"
-        photo="card.webp"
-      >
-        <LinkButton
-          label="Página"
-          link="https://anarangel.github.io"
-          icon="socials/website"
-          bgColor="var(--cinnabar-color)"
-          textColor="var(--text-color)"
-          external
-        />
-        <LinkButton label="GitHub" link="https://github.com/AnaRangel/anarangel.github.io" icon="socials/github" external />
-      </ProjectCard>
       <div class="line"></div>
-      <div class="project-alignment">
-        <div class="projects">
-          <div class="project-container left">
-            <div class="svg">
-              <CurveIconLeft />
-            </div>
+      <div class="first-project">
+        <ProjectCard
+          className="project-principal"
+          desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables. Estas cartas representan momentos únicos del canal, tecnologías y muchas cositas divertidas para rememorar."
+          title="Portforlio Ana Rangel"
+          photo="cards-demo.webp"
+        >
+          <LinkButton
+            label="Página"
+            link="https://uxcorprangel.github.io/ana-cards-web/"
+            icon="socials/website"
+            bgColor="var(--cinnabar-color)"
+            textColor="var(--text-color)"
+            external
+          />
+          <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
+        </ProjectCard>
+      </div>
+      <div class="projects-container">
+        <div class="right">
+          <div class="curve-right">
+            <CurveIconLeft />
+          </div>
+          <div class="project-volunteers">
             <ProjectCard
-              className="project-principal"
-              desc="Este proyecto fue el primer proyecto desarrollado en comunidad dándole lugar a personas con poca o nula experiencia trabajando en equipo"
+              className="project-secondary"
+              desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables. Estas cartas representan momentos únicos del canal, tecnologías y muchas cositas divertidas para rememorar."
               title="Ana x Cards"
-              photo="card.webp"
+              photo="cards-demo.webp"
             >
               <LinkButton
                 label="Página"
-                link="https://anarangel.github.io"
+                link="https://uxcorprangel.github.io/ana-cards-web/"
                 icon="socials/website"
                 bgColor="var(--cinnabar-color)"
                 textColor="var(--text-color)"
                 external
               />
-              <LinkButton label="GitHub" link="https://github.com/AnaRangel/anarangel.github.io" icon="socials/github" external />
+              <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
             </ProjectCard>
-            <div class="buble">
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
+            <div class="volunteer">
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
             </div>
           </div>
-          <div class="project-container right">
+        </div>
+        <div class="left">
+          <div class="curve-left">
+            <CurveIconRight />
+          </div>
+          <div class="project-volunteers">
             <ProjectCard
-              className="project-principal"
-              desc="Este proyecto fue el primer proyecto desarrollado en comunidad dándole lugar a personas con poca o nula experiencia trabajando en equipo"
-              title="Portfolio Ana Rangel"
-              photo="card.webp"
+              className="project-secondary"
+              desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables. Estas cartas representan momentos únicos del canal, tecnologías y muchas cositas divertidas para rememorar."
+              title="Portfolio para devs"
+              photo="portfolio-dev.webp"
             >
               <LinkButton
                 label="Página"
-                link="https://anarangel.github.io"
+                link="https://uxcorprangel.github.io/ana-cards-web/"
                 icon="socials/website"
                 bgColor="var(--cinnabar-color)"
                 textColor="var(--text-color)"
                 external
               />
-              <LinkButton label="GitHub" link="https://github.com/AnaRangel/anarangel.github.io" icon="socials/github" external />
+              <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
             </ProjectCard>
-            <div class="buble">
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
-            </div>
-            <div class="svg">
-              <CurveIconRight />
+            <div class="volunteer">
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
             </div>
           </div>
-          <div class="project-container left">
-            <div class="svg">
-              <CurveIconLeft />
-            </div>
+        </div>
+        <div class="right">
+          <div class="curve-right">
+            <CurveIconLeft />
+          </div>
+          <div class="project-volunteers">
             <ProjectCard
-              className="project-principal"
-              desc="Este proyecto fue el primer proyecto desarrollado en comunidad dándole lugar a personas con poca o nula experiencia trabajando en equipo"
-              title="Otro Proyecto"
-              photo="card.webp"
+              className="project-secondary"
+              desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables. Estas cartas representan momentos únicos del canal, tecnologías y muchas cositas divertidas para rememorar."
+              title="JsConf Chile 2024"
+              photo="jsConf.webp"
             >
               <LinkButton
                 label="Página"
-                link="https://anarangel.github.io"
+                link="https://uxcorprangel.github.io/ana-cards-web/"
                 icon="socials/website"
                 bgColor="var(--cinnabar-color)"
                 textColor="var(--text-color)"
                 external
               />
-              <LinkButton label="GitHub" link="https://github.com/AnaRangel/anarangel.github.io" icon="socials/github" external />
+              <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
             </ProjectCard>
-            <div class="buble">
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
-              <div class="projects-volunteers">
-                <BubbleAvatar />
-              </div>
+            <div class="volunteer">
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="left">
+          <div class="curve-left">
+            <CurveIconRight />
+          </div>
+          <div class="project-volunteers">
+            <ProjectCard
+              className="project-secondary"
+              desc="Este proyecto busca recompensar a los suscriptores y donadores de suscripciones en el canal de Twitch de Ana con cartas de unicornios coleccionables. Estas cartas representan momentos únicos del canal, tecnologías y muchas cositas divertidas para rememorar."
+              title="UX Corp Rangel"
+              photo="uxCorp.webp"
+            >
+              <LinkButton
+                label="Página"
+                link="https://uxcorprangel.github.io/ana-cards-web/"
+                icon="socials/website"
+                bgColor="var(--cinnabar-color)"
+                textColor="var(--text-color)"
+                external
+              />
+              <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/ana-cards-web" icon="socials/github" external />
+            </ProjectCard>
+            <div class="volunteer">
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
+              <BubbleAvatar
+                imageSrc="./assets/images/volunteers/facu.webp"
+                altText="Facu"
+                linkedinLink="https://linkedin.com/in/facu"
+                githubLink="https://github.com/facu"
+              />
             </div>
           </div>
         </div>
@@ -124,92 +185,134 @@ import Layout from '@layouts/Layout.astro';
 
 <style>
   .projects-wrapper {
+    width: 110rem;
+    height: fit-content;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0;
 
     .line {
-      width: 0.375rem;
-      height: 1700px;
+      width: 8px;
+      height: 1800px;
+      position: absolute;
       background-color: var(--spring-green-color);
-      display: block;
-      margin: auto;
-      position: absolute;
-      left: 50%;
       z-index: -1;
+      top: 20rem;
     }
 
-    .project-alignment {
-      width: 100%;
+    .first-project {
+      max-width: 56.25rem;
+      margin: 3rem 0;
+    }
+
+    .projects-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      gap: 5rem;
-    }
-
-    .projects {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5rem;
-    }
-
-    .project-container {
-      display: flex;
-      align-items: center;
       justify-content: center;
       width: 100%;
-      position: relative;
-      max-width: 800px;
       margin: 8rem 0;
-    }
-
-    .curve {
-      color: var(--spring-green-color);
-    }
-
-    .left {
-      left: 49.9%;
-    }
-
-    .right {
-      right: 49.1%;
-    }
-
-    .buble {
-      display: flex;
-      gap: 15rem;
-      position: absolute;
-      top: 257px;
-      left: 20%;
-      width: 300px;
-
-      .projects-volunteers {
+      .right {
+        justify-content: center;
+        align-items: center;
         display: flex;
+        position: relative;
+        left: 37.8%;
+
+        .curve-right {
+          position: absolute;
+          z-index: -1;
+          left: 12%;
+          top: -30%;
+        }
+
+        .project-volunteers {
+          max-width: 600px;
+          position: relative;
+          right: 6%;
+
+          .volunteer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8rem;
+            margin: 1rem 0;
+          }
+        }
+      }
+
+      .left {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: 37.75%;
+
+        .curve-left {
+          position: absolute;
+          z-index: -1;
+          right: 12%;
+          top: -30%;
+        }
+
+        .project-volunteers {
+          max-width: 600px;
+          position: relative;
+          left: 6%;
+
+          .volunteer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8rem;
+            margin: 1rem 0;
+          }
+        }
       }
     }
+  }
 
-    @media (max-width: 760px) {
+  @media (width <= 768px) {
+    .projects-wrapper {
+      width: 100%;
+      margin: 0.5rem;
+
       .line {
         height: 3000px;
       }
 
-      .project-container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        left: 0;
-        right: 0;
-        .svg {
-          display: none;
-        }
+      .first-project {
+        margin: 1rem;
       }
 
-      .buble {
-        display: none;
+      .projects-container {
+        margin: 1rem;
+        .right {
+          left: 0;
+
+          .curve-right {
+            display: none;
+          }
+
+          .project-volunteers {
+            left: 0;
+            margin: 1rem;
+          }
+        }
+
+        .left {
+          right: 0;
+
+          .curve-left {
+            display: none;
+          }
+
+          .project-volunteers {
+            left: 0;
+            margin: 1rem;
+          }
+        }
       }
     }
   }
