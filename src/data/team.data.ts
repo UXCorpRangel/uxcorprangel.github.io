@@ -43,7 +43,7 @@ export const team: TeamMember[] = [
       { label: 'Github', link: 'https://github.com/felixicaza', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/felixicaza', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
-    description: `Uno de los primeros integrantes del sótano. Nadie aprueba una PR sin consultarle, es capaz de sacarle el máximo provecho a la web, conocido por tener cierta destreza con CSS y ganador de las cartas de Ana Rangel y Figma en ManzDev. Ahora su próxima meta es lograr la carta de Figma en ek proyecto de Ana antes que ella.`
+    description: `Uno de los primeros integrantes del sótano. Nadie aprueba una PR sin consultarle, es capaz de sacarle el máximo provecho a la web, conocido por tener cierta destreza con CSS y ganador de las cartas de Ana Rangel y Figma en ManzDev. Ahora su próxima meta es lograr la carta de Figma en el proyecto de Ana antes que ella.`
   },
   {
     name: 'Samuel Llibre-Pillco',
@@ -88,7 +88,7 @@ export const team: TeamMember[] = [
       { label: 'Github', link: 'https://github.com/colmedev', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/colmedev', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    description: `Integrante del sótano experto en diseño responsive y componentes Navbar. Siempre que se necesita hacer asegurar el diseño responsivo o un navbar, lo buscan a el para que lo haga. Entusiasta de la tecnología y el desarrollo web, siempre está dispuesto a aprender. Últimamente ha incursionado en componentes Footer y trucos avanzados de CSS.`
   },
   {
     name: 'Facundo D´Andrea',
@@ -99,7 +99,7 @@ export const team: TeamMember[] = [
       { label: 'Github', link: 'https://github.com/Facundodandrea', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/facundo-d-andrea', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    description: `Persona de baja estatura que programa, es conocido como tu amigo el apoya brazo. Es el terror de las bases de datos, capaz de centrar un <div> sin morir en el intento. Egresado como técnico superior en programación. Solo sabe hablar con referencias a memes. Aprendiz de Figma, que ya no explota el efecto "mirror" en tarjetas.`
   }
 ];
 
