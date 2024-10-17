@@ -1,58 +1,15 @@
-# Astro Starter Kit: Basics
+# 🌟 Bienvenidos a UX Corp Rangel 🌟
 
-[Figma](https://www.figma.com/design/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=0-1&m=dev&t=hB5wvwUrPueRNM7c-1) &
-[Prototipo](https://www.figma.com/proto/v33NGJgHEgJEGCRRzk4Xun/UXCorpRangel?node-id=3-2&t=hB5wvwUrPueRNM7c-1) &
-[Logos](https://www.figma.com/design/VksqE6Wvi6Y0NezqfWqQQv/logo-uxcorp?node-id=8-1708&node-type=frame&t=OHAsSjruFWjowLs6-0)
+Este repositorio alberga el sitio web de UX Corp Rangel, una comunidad creada con mucho cariño por Ana Rangel 💖. Este espacio ha sido diseñado y construido por miembros de la comunidad como una **sorpresa especial** 🎉, un pequeño gesto de agradecimiento y aprecio por todo lo que Ana significa para nosotros. 🙌
 
-```sh
-npm create astro@latest -- --template basics
-```
+## 💡 ¿Qué es UX Corp Rangel?
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+UX Corp Rangel es más que una comunidad de diseño y experiencia de usuario, es un rincón mágico 🦄 donde las ideas florecen, la creatividad brilla ✨ y cada miembro encuentra apoyo y motivación para crecer. Todo esto guiado por la luz y el brillo natural de Ana, quien ha sido inspiración para todos nosotros. 🚀
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 ¿Por qué creamos este sitio?
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Queremos que este sitio web sea el reflejo del amor y la gratitud que sentimos por Ana. Ella ha cuidado esta comunidad como si fuera un establo de unicornios 🦄🌸, donde cada uno de nosotros ha encontrado un lugar para aprender, compartir y brillar. 💫 ¡Gracias, Ana, por ser nuestra UX favorita, amiga y fuente de energía positiva!
 
-## 🚀 Project Structure
+## 🙏 Agradecimientos
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Este proyecto no hubiera sido posible sin el esfuerzo y la colaboración de cada miembro de UX Corp Rangel. Cada línea de código, cada diseño y cada idea ha sido una manifestación del inmenso cariño que sentimos por ti, Ana Rangel. 💕 ¡Eres nuestra inspiración y te estamos infinitamente agradecidos!
