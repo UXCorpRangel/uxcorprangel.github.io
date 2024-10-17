@@ -1,137 +1,46 @@
 ---
 import LinkButton from '@components/LinkButton.astro';
+import { team } from '@data/team.data';
 
-const data = [
-  {
-    name: 'Ana Rangel',
-    img: 'ana-rangel',
-    tags: ['dev'],
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Ricardo Cuauro',
-    img: 'ricardo-cuauro',
-    tags: ['dev'],
+function minmax(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
+}
 
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Felix Icaza',
-    img: 'felix-icaza',
-    tags: ['dev'],
-
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Samuel Llibre-Pillco',
-    img: 'samuel-llibre-pillco',
-    tags: ['dev'],
-
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Jaime Gutiérrez',
-    img: 'jaime-gutierrez',
-    tags: ['dev'],
-
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Omar Aguirre',
-    img: 'omar-aguirre',
-    tags: ['dev'],
-
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  },
-  {
-    name: 'Alfonsina Lizardo',
-    img: 'alfonsina-lizardo',
-    tags: ['dev'],
-
-    socials: [
-      { name: 'LinkedIn', link: '', nameIcon: 'linkedin', color: 'var(--linkedin-color)' },
-      { name: 'Github', link: '', nameIcon: 'github', color: 'var(--github-color)' },
-      { name: 'Discord', link: '', nameIcon: 'discord', color: 'var(--discord-color)' },
-      { name: 'Instagram', link: '', nameIcon: 'instagram', color: 'var(--burnt-sienna-color)' }
-    ]
-  }
-];
-
-const total = data.length;
-
-const view = (position: number) => {
-  const calc = (100 * (position + 10)) / (total + 10) / 100;
-  const minmax = (value: number, min: number, max: number) => {
-    return Math.min(Math.max(value, min), max);
-  };
+function view(position: number) {
+  const calc = (100 * (position + 10)) / (team.length + 10) / 100;
   return minmax(calc, 0, 1);
-};
+}
 
-const isPar = (num: number) => num % 2 === 0;
+function isPar(num: number) {
+  return num % 2 === 0;
+}
 ---
 
 <section id="equipo" class="team">
   <h1 class="team--title">Equipo</h1>
 
   {
-    data.map(({ name, img, tags, socials }, i) => (
+    team.map(({ name, description, img, tags, socials }, i) => (
       <div
         class="team__card"
         style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.95}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
       >
         <img src={`/assets/images/team/${img}.webp`} alt={name} class="team__card-img" />
+
         <div class="team__card-info">
           <h2>{name}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus
-            semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est.
-          </p>
+
+          <p>{description}</p>
+
           <div class="team__card-tags">
             {tags.map(tag => (
               <span class="team__card-tag">{tag}</span>
             ))}
           </div>
+
           <div class="team__card-social">
-            {socials.map(({ name, link, nameIcon, color }) => (
-              <LinkButton
-                external
-                label={name}
-                icon={`socials/${nameIcon}`}
-                link={link}
-                shadow="green"
-                bgColor={color}
-                textColor="var(--text-color)"
-              />
+            {socials.map(({ icon, label, link, color }) => (
+              <LinkButton external label={label} icon={`socials/${icon}`} link={link} bgColor={color} textColor="var(--text-color)" />
             ))}
           </div>
         </div>
