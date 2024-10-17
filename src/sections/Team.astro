@@ -1,4 +1,5 @@
 ---
+import RoleTag from '@components/RoleTag.astro';
 import LinkButton from '@components/LinkButton.astro';
 import { team } from '@data/team.data';
 
@@ -34,7 +35,7 @@ function isPar(num: number) {
 
           <div class="team__card-tags">
             {tags.map(tag => (
-              <span class="team__card-tag">{tag}</span>
+              <RoleTag role={tag} />
             ))}
           </div>
 
@@ -176,18 +177,6 @@ function isPar(num: number) {
     @media (--col-viewport) {
       grid-row: 2;
     }
-  }
-  .team__card-tag {
-    background: #2e58ff;
-    border: 2px solid #04011c;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 10.75px;
-    border-radius: 9999px;
-    box-shadow: 4px 4px 0px 0px #04011c;
-    padding: 0.5rem 0.6rem;
-    color: #fff;
-    text-transform: capitalize;
   }
 
   .team__card-social {

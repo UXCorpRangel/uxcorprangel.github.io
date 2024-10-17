@@ -1,4 +1,4 @@
-import type { TeamMember } from '@contracts';
+import type { TeamMember, VolunteerMember } from '@contracts';
 
 import { DISCORD_URL } from './socials.data';
 
@@ -11,7 +11,7 @@ export const team: TeamMember[] = [
       { label: 'Sitio Web', link: 'https://anarangel.github.io', icon: 'website', color: '#fa86ce' },
       { label: 'Github', link: 'https://github.com/anarangel', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/ux-ana-rangel', icon: 'linkedin', color: 'var(--linkedin-color)' },
-      { label: 'Instagram', link: 'https://www.instagram.com/ux.ana.rangel', icon: 'instagram', color: 'var(--burnt-sienna-color)' },
+      { label: 'Instagram', link: 'https://www.instagram.com/ux.ana.rangel', icon: 'instagram', color: 'var(--instagram-color)' },
       { label: 'Twitch', link: 'https://twitch.tv/uxanarangel', icon: 'twitch', color: '#9146ff' },
       { label: 'YouTube', link: 'https://youtube.com/@ux.ana.rangel', icon: 'youtube', color: '#ff0000' },
       { label: 'Behance', link: 'https://behance.net/rangelana1a2a6', icon: 'behance', color: '#1769ff' },
@@ -43,7 +43,7 @@ export const team: TeamMember[] = [
       { label: 'Github', link: 'https://github.com/felixicaza', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/felixicaza', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
-    description: `Uno de los primeros integrantes del sótano. Nadie aprueba una PR sin consultarle, es capaz de sacarle el máximo provecho a la web, conocido por tener cierta destreza con CSS y ganador de las cartas de Ana Rangel y Figma en ManzDev. Ahora su próxima meta es lograr la carta de Figma en este proyecto antes que Ana.`
+    description: `Uno de los primeros integrantes del sótano. Nadie aprueba una PR sin consultarle, es capaz de sacarle el máximo provecho a la web, conocido por tener cierta destreza con CSS y ganador de las cartas de Ana Rangel y Figma en ManzDev. Ahora su próxima meta es lograr la carta de Figma en ek proyecto de Ana antes que ella.`
   },
   {
     name: 'Samuel Llibre-Pillco',
@@ -93,7 +93,7 @@ export const team: TeamMember[] = [
   {
     name: 'Facundo D´Andrea',
     img: 'facundo-d-andrea',
-    tags: ['dev'],
+    tags: ['dev', 'ui'],
     socials: [
       { label: 'Sitio Web', link: 'https://facundodandrea.vercel.app', icon: 'website', color: '#ff5470' },
       { label: 'Github', link: 'https://github.com/Facundodandrea', icon: 'github', color: 'var(--github-color)' },
@@ -103,7 +103,7 @@ export const team: TeamMember[] = [
   }
 ];
 
-export const volunteers: TeamMember[] = [
+export const volunteers: VolunteerMember[] = [
   {
     name: 'Alfonsina Lizardo',
     img: 'alfonsina-lizardo',
@@ -112,11 +112,10 @@ export const volunteers: TeamMember[] = [
       { label: 'Sitio Web', link: 'https://alfonsinalizardo.netlify.app', icon: 'website', color: '#5e3d84' },
       { label: 'Github', link: 'https://github.com/Alais29', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/alais29dev', icon: 'linkedin', color: 'var(--linkedin-color)' },
-      { label: 'Instagram', link: 'https://www.instagram.com/alais29dev', icon: 'linkedin', color: 'var(--burnt-sienna-color)' },
-      { label: 'Threads', link: 'https://www.threads.net/@alais29dev', icon: 'linkedin', color: '#000000' },
-      { label: 'DEV Community', link: 'https://dev.to/alais29dev', icon: 'linkedin', color: '#0a0a0a' }
-    ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+      { label: 'Instagram', link: 'https://www.instagram.com/alais29dev', icon: 'instagram', color: 'var(--instagram-color)' },
+      { label: 'Threads', link: 'https://www.threads.net/@alais29dev', icon: 'threads', color: '#000000' },
+      { label: 'DEV Community', link: 'https://dev.to/alais29dev', icon: 'dev-community', color: '#0a0a0a' }
+    ]
   },
   {
     name: 'Luis Tenorio',
@@ -128,8 +127,7 @@ export const volunteers: TeamMember[] = [
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/luis-tenorio-code', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Twitter', link: 'https://x.com/luis_programing', icon: 'twitter', color: '#000000' },
       { label: 'TikTok', link: 'https://tiktok.com/@luis_codex', icon: 'tiktok', color: '#000000' }
-    ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    ]
   },
   {
     name: 'Luciano Morales',
@@ -139,7 +137,6 @@ export const volunteers: TeamMember[] = [
       { label: 'Sitio Web', link: 'https://www.luciano-morales.com/', icon: 'website', color: '#000000' },
       { label: 'Github', link: 'https://github.com/luc-mo', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/lucmoralesr', icon: 'linkedin', color: 'var(--linkedin-color)' }
-    ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    ]
   }
 ];

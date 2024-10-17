@@ -1,64 +1,73 @@
 ---
-type Props = {
-  name: string;
-  desc: string;
-  photo: string;
-};
+import type { VolunteerMember } from '@contracts';
 
-const { name, desc, photo } = Astro.props;
+import RoleTag from './RoleTag.astro';
+import LinkButton from './LinkButton.astro';
+
+type Props = VolunteerMember;
+
+const { img, name, socials, tags } = Astro.props;
 ---
 
-<div class="card-wrapper">
-  <img src=`/assets/images/volunteers/${photo}` alt="{name}" />
-  <div class="card-info">
+<article class="card-wrapper">
+  <img src=`/assets/images/volunteers/${img}.webp` alt={name} />
+
+  <header class="card-info">
     <h3>{name}</h3>
-    <p>{desc}</p>
+  </header>
+
+  <div class="card-row">
+    {tags.map(tag => <RoleTag role={tag} />)}
   </div>
-  <div class="card-buttons">
-    <slot />
+
+  <div class="card-row">
+    {
+      socials.map(({ icon, label, link, color }) => (
+        <LinkButton external hideLabel label={label} link={link} icon={`socials/${icon}`} textColor={color} />
+      ))
+    }
   </div>
-</div>
+</article>
 
 <style>
   .card-wrapper {
-    width: 386px;
-    height: fit-content;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-    background-color: var(--golden-tainoi-color);
-
-    border-radius: 1rem;
-    border: 2px solid var(--alt-text-color);
-    box-shadow: 4px 4px var(--spring-green-color);
+    width: 24rem;
     padding: 1rem;
+    border-radius: 1rem;
+    color: var(--alt-text-color);
+    border: 2px solid var(--alt-text-color);
+    background-color: var(--golden-tainoi-color);
+    box-shadow: 0.25rem 0.25rem 0 var(--spring-green-color);
+
+    & img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 1rem;
+      border: 2px solid var(--alt-text-color);
+    }
+
+    & .card-info h3 {
+      line-height: 1;
+      font-weight: 600;
+      font-size: 1.75rem;
+      text-align: center;
+      font-family: var(--main-font-family);
+    }
+
+    & .card-row {
+      gap: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     @media (width <= 430) {
       width: 100%;
-    }
-
-    & img {
-      border-radius: 1rem;
-      border: 2px solid var(--alt-text-color);
-      aspect-ratio: 1;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    & .card-info {
-      padding: 1rem 0;
-      color: var(--alt-text-color);
-
-      & h3 {
-        font-family: var(--main-font-family);
-        font-size: 1.75rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-    }
-
-    & .card-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
     }
   }
 </style>

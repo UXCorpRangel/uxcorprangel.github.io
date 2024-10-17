@@ -1,0 +1,40 @@
+---
+import { ROLE_BG_COLORS, ROLE_FG_COLORS, ROLE_TEXTS, type TagRole } from '@contracts';
+
+type Props = {
+  role: TagRole;
+};
+
+const { role } = Astro.props;
+---
+
+<span class="tag">
+  {ROLE_TEXTS[role]}
+</span>
+
+<style
+  define:vars={{
+    'tag-fg-color': ROLE_FG_COLORS[role],
+    'tag-bg-color': ROLE_BG_COLORS[role]
+  }}
+>
+  .tag {
+    color: var(--tag-fg-color);
+    background: var(--tag-bg-color);
+
+    line-height: 1;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    border-radius: 2rem;
+    padding: 0.5rem 0.6rem;
+    border: 2px solid var(--alt-text-color);
+    box-shadow: 4px 4px 0px 0px var(--alt-text-color);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

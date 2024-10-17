@@ -1,50 +1,6 @@
 ---
-import Button from '@components/LinkButton.astro';
 import VolunteerCard from '@components/VolunteerCard.astro';
-
-const volunteers = [
-  {
-    name: 'Facundo D’Andrea',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
-    photo: 'luis-tenorio.webp',
-    tags: ['Dev', 'Custom color'],
-    socials: [
-      {
-        name: 'LinkedIn',
-        link: 'https://www.linkedin.com/company/uxcorprangel',
-        iconName: 'socials/linkedin'
-      }
-    ]
-  },
-  {
-    name: 'Facundo D’Andrea',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
-    photo: 'luis-tenorio.webp',
-    tags: ['Dev', 'Custom color'],
-    socials: []
-  },
-  {
-    name: 'Facundo D’Andrea',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
-    photo: 'luis-tenorio.webp',
-    tags: ['Dev', 'Custom color'],
-    socials: []
-  },
-  {
-    name: 'Facundo D’Andrea',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
-    photo: 'luis-tenorio.webp',
-    tags: ['Dev', 'Custom color'],
-    socials: []
-  },
-  {
-    name: 'Facundo D’Andrea',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus.',
-    photo: 'luis-tenorio.webp',
-    tags: ['Dev'],
-    socials: []
-  }
-];
+import { volunteers } from '@data/team.data';
 ---
 
 <section id="voluntarios">
@@ -52,32 +8,10 @@ const volunteers = [
     <header>
       <h1>Voluntarios</h1>
     </header>
-    <article class="cards-container">
-      {
-        volunteers.map(({ name, desc, photo, socials, tags }) => (
-          <VolunteerCard name={name} desc={desc} photo={photo}>
-            {tags.map(tag => (
-              // we need to implement a tag component
-              <span
-                class="tag"
-                style="border: 1px solid var(--alt-text-color); color: var(--alt-text-color); border-radius: 24px; display: flex; align-items: center; padding: 0.5rem 0.75rem; background: var(--magic-mint-color);"
-              >
-                {tag}
-              </span>
-            ))}
 
-            {socials.map(({ name, link, iconName }) => (
-              <Button external label={name} link={link} icon={iconName} />
-            ))}
-
-            {/* examples */}
-            <Button label="Custom Color" link="#" textColor="red" bgColor="rgb(120 60 120)" />
-            <Button label="With icon" link="#" icon="socials/linkedin" />
-            <Button label="Only icon" link="#" icon="socials/github" hideLabel />
-          </VolunteerCard>
-        ))
-      }
-    </article>
+    <div class="cards-container">
+      {volunteers.map(({ img, name, socials, tags }) => <VolunteerCard img={img} name={name} socials={socials} tags={tags} />)}
+    </div>
   </div>
 </section>
 
@@ -121,10 +55,8 @@ const volunteers = [
 
   @media (width <= 768px) {
     section {
-      & header {
-        & h1 {
-          font-size: 2.188em;
-        }
+      & header h1 {
+        font-size: 2.188em;
       }
 
       & .cards-container {
