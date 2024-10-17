@@ -2,192 +2,162 @@
 import RoleTag from '@components/RoleTag.astro';
 import LinkButton from '@components/LinkButton.astro';
 import { team } from '@data/team.data';
-
-function minmax(value: number, min: number, max: number) {
-  return Math.min(Math.max(value, min), max);
-}
-
-function view(position: number) {
-  const calc = (100 * (position + 10)) / (team.length + 10) / 100;
-  return minmax(calc, 0, 1);
-}
-
-function isPar(num: number) {
-  return num % 2 === 0;
-}
 ---
 
-<section id="equipo" class="team">
-  <h1 class="team--title">Equipo</h1>
+<section id="equipo">
+  <div class="container">
+    <header>
+      <h1>Equipo</h1>
+    </header>
 
-  {
-    team.map(({ name, description, img, tags, socials }, i) => (
-      <div
-        class="team__card"
-        style={`--scale-to: ${view(i + 1)};top:calc(var(--top-base) + ${i * 0.95}rem); --order: ${isPar(i) ? 0 : 1};--border-img: ${isPar(i) ? '0 2px 0 0' : '0 0 0 2px'}`}
-      >
-        <img src={`/assets/images/team/${img}.webp`} alt={name} class="team__card-img" />
+    <div class="members">
+      {
+        team.map(({ description, img, name, socials, tags }) => (
+          <article class="member">
+            <img src={`/assets/images/team/${img}.webp`} alt={name} />
 
-        <div class="team__card-info">
-          <h2>{name}</h2>
+            <div class="info">
+              <h2>{name}</h2>
 
-          <p>{description}</p>
+              <p>{description}</p>
 
-          <div class="team__card-tags">
-            {tags.map(tag => (
-              <RoleTag role={tag} />
-            ))}
-          </div>
+              <div class="tags">
+                {tags.map(tag => (
+                  <RoleTag role={tag} />
+                ))}
+              </div>
 
-          <div class="team__card-social">
-            {socials.map(({ icon, label, link, color }) => (
-              <LinkButton external label={label} icon={`socials/${icon}`} link={link} bgColor={color} textColor="var(--text-color)" />
-            ))}
-          </div>
-        </div>
-      </div>
-    ))
-  }
+              <div class="social">
+                {socials.map(({ icon, label, link, color }) => (
+                  <LinkButton external label={label} icon={`socials/${icon}`} link={link} bgColor={color} textColor="var(--text-color)" />
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-  @custom-media --col-viewport (width < 940px);
-
-  .team {
-    --top-base: 10rem;
-
+  section {
+    width: 100%;
     min-height: 100vh;
-    width: min(80rem, 100vw);
-    margin-inline: auto;
-    padding: 8rem clamp(1rem, 5vw, 4rem);
-    position: relative;
-    display: grid;
-    gap: clamp(2rem, 10vw, 3rem);
-
-    @media (--col-viewport) {
-      padding: 0;
-    }
-
-    .team--title {
-      font-size: 70px;
-      font-weight: 400;
-      line-height: 80.15px;
-      text-align: center;
-      position: sticky;
-      top: calc(var(--top-base) / 2);
-      text-decoration: underline 0.25rem;
-
-      @media (--col-viewport) {
-        position: initial;
-        font-size: 2.188em;
-      }
-    }
-  }
-
-  .team__card {
-    position: sticky;
+    padding: 8rem 0;
     display: flex;
-    background: var(--mauve-color);
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 4px 4px 0px 0px #39ed81;
-    border: 2px solid #04011c;
-
-    @media (--col-viewport) {
-      flex-direction: column;
-      width: 90%;
-      margin-inline: auto;
-      position: initial !important;
-    }
-  }
-
-  .team__card-img {
-    order: var(--order);
-    flex: 1;
-    aspect-ratio: 1 / 1;
-    border: solid #04011c;
-    border-width: var(--border-img);
-    max-width: 425px;
-    object-fit: cover;
-
-    @media (--col-viewport) {
-      border-width: 0 0 2px 0;
-      order: 0;
-    }
-  }
-
-  .team__card-info {
-    flex: 2;
-    padding: 1rem;
-    color: #04011c;
-    display: grid;
-    grid-template-rows: auto auto auto 1fr;
-    gap: 1rem;
-
-    @media (--col-viewport) {
-      text-align: center;
-    }
-
-    h2 {
-      font-family: var(--main-font-family);
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 80.8px;
-      text-align: left;
-      order: 0;
-    }
-
-    p {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 25.5px;
-      max-width: 666px;
-    }
-  }
-
-  .team__card {
-    animation-name: scale;
-    animation-duration: 1ms;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation-timeline: view(6rem 6.1rem);
-    transform-origin: 50% 4.5rem;
-
-    @media (--col-viewport) {
-      animation: none;
-      animation-timeline: none;
-      position: relative;
-    }
-  }
-
-  @keyframes scale {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(var(--scale-to));
-    }
-  }
-
-  .team__card-tags {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    @media (--col-viewport) {
-      grid-row: 2;
-    }
-  }
+    & .container {
+      width: min(80rem, 100vw);
 
-  .team__card-social {
-    display: flex;
-    flex-wrap: wrap;
-    align-self: end;
-    gap: 1rem;
+      & header h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        text-decoration: underline 0.25rem;
+      }
 
-    @media (--col-viewport) {
-      justify-content: center;
+      & .members {
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & .member {
+          display: flex;
+          overflow: hidden;
+          align-items: stretch;
+          justify-content: center;
+          color: var(--alt-text-color);
+
+          gap: 1rem;
+          border-radius: 1rem;
+          background: var(--fuchsia-blue-color);
+          border: 2px solid var(--alt-text-color);
+          box-shadow: 4px 4px 0px 0px var(--spring-green-color);
+
+          & img {
+            width: 360px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+          }
+
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+            & img {
+              border-inline-start: 2px solid var(--alt-text-color);
+            }
+          }
+
+          &:nth-child(odd) {
+            flex-direction: row;
+            & img {
+              border-inline-end: 2px solid var(--alt-text-color);
+            }
+          }
+
+          & .info {
+            flex: 1;
+            gap: 1rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2 {
+              font-size: 2rem;
+              text-align: start;
+              font-weight: 700;
+              line-height: 1.5;
+              font-family: var(--main-font-family);
+            }
+
+            p {
+              flex: 1;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1.5;
+            }
+
+            & .tags {
+              flex: 1;
+              gap: 1rem;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+
+            & .social {
+              flex: 1;
+              gap: 0.5rem 1rem;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-start;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+
+      @media (width < 768px) {
+        & header h1 {
+          font-size: 2.188em;
+        }
+
+        & .members {
+          gap: 6rem;
+        }
+      }
     }
   }
 </style>
