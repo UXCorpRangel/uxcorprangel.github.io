@@ -17,13 +17,14 @@ export const team: TeamMember[] = [
       { label: 'Behance', link: 'https://behance.net/rangelana1a2a6', icon: 'behance', color: '#1769ff' },
       { label: 'Discord', link: DISCORD_URL, icon: 'discord', color: 'var(--discord-color)' }
     ],
-    description: `UX Designer con una comunidad tan avanzada que ya es casi una secta, de hecho, mis seguidores llevan mi apellido en sus nicknames. Amante de los unicornios, devs y todo lo que tenga que ver con jugar en equipo (o sea, Fortnite). Me encontrarás siempre rompiendo el estereotipo del UX gruñón: en lugar de hacerle la vida imposible a los devs, prefiero enseñar, compartir risas, y conquistar corazones... ¡incluso si se trata de conquistar una partida en Fortnite! Si buscas unicornios, buena onda, y algo de código, estás oficialmente en territorio UX Corp Rangel!`
+    description: `UX Designer con una comunidad tan avanzada que ya es casi una secta, de hecho, mis seguidores llevan mi apellido en sus nicknames. Amante de los unicornios, devs y todo lo que tenga que ver con jugar en equipo (o sea, Fortnite y juegos a fines). Me encontrarás siempre rompiendo el estereotipo del UX gruñón: en lugar de hacerle la vida imposible a los devs, prefiero enseñar, compartir risas, y conquistar corazones... Si buscas unicornios, buena onda, y algo de código, estás oficialmente en territorio UX Corp Rangel!`
   },
   {
     name: 'Ricardo Cuauro',
     img: 'ricardo-cuauro',
     tags: ['dev'],
     socials: [
+      { label: 'Sitio Web', link: 'https://odracir.dev', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/odracirdev', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/RicardoCuauro', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Twitch', link: 'https://twitch.tv/odracirdev', icon: 'twitch', color: '#9146ff' },
@@ -31,7 +32,7 @@ export const team: TeamMember[] = [
       { label: 'Discord', link: 'https://discord.gg/3m9KdYAf3p', icon: 'discord', color: 'var(--discord-color)' }
     ],
     description:
-      'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est'
+      'Desarrollador frontend en constante aprendizaje autodidacta, moderador del canal de Ana, trabajador explotado (por él mismo) durante el día y streamer de noche. Amanete del café y el código vanilla pero siempre dispuesto a probar nuevas tecnologías. Colaborador en distintas comunidades siempre dispuesto a aportar líneas de código, buena onda y mucha joda. Recientemente nombrado como TL por Ana aunque siempre le pide ayuda a su buen amigo Gepeto.'
   },
   {
     name: 'Félix Icaza',
@@ -54,7 +55,8 @@ export const team: TeamMember[] = [
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/zyruks', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Twitter', link: 'https://twitter.com/zyruks', icon: 'twitter', color: '#000000' }
     ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    description:
+      'Hijo de Serudda, TL pachonsito designado por defecto, diseñador gráfico titulado pero desarrollador por vocación (por lo menos no terminó en el McDonald´s). Cuenta la leyenda que debido a sus estrictas reglas el portafolios de Ana estuvo varado en el limbo durante 6 meses. Aunque la mayor parte del tiempo está desaparecido tiene un lugar especial dentro de la corporación. Este quisqueyano hermoso no se cansa de aportar valor a la comunidad.'
   },
   {
     name: 'Jaime Gutiérrez',
@@ -66,7 +68,8 @@ export const team: TeamMember[] = [
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/jagcruz', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'CodePen', link: 'https://codepen.io/jagcruz', icon: 'codepen', color: '#000000' }
     ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    description:
+      '¡Quita coño! Nuestro senior gruñón (es de cariño, no lo hace adrede). Si no aprendes por las buenas seguramente aprenderás por las malas. El conocimiento es su poder y lo reparte a diestra y siniestra con toda la comunidad. Es la persona encargada de administrar el papel higiénico en el sótano donde todos trabajamos, por esto su rol es indispensable para el correcto funcionamiento de la corporación. El encargado de consultarle a Sandy si aprueba las PR´s o no.'
   },
   {
     name: 'Omar Aguirre',
@@ -77,7 +80,8 @@ export const team: TeamMember[] = [
       { label: 'Github', link: 'https://github.com/omaaraguirre', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/omaaraguirre', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
-    description: `Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est`
+    description:
+      'El alma de la fiesta, nuestro mexican sexy boy, la voz que nos pone a temblar en Discord y la mente detrás de la mayoría de los easter eggs de todos nuestros trabajos. Todo esto comprimido en 1.6mts de estatura gracias a que es uno de los pocos que paga la licencia de WinRAR.'
   },
   {
     name: 'Miguel Colmenarez',
