@@ -1,9 +1,109 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import LinkButton from '@components/LinkButton.astro';
+import portfolios from '@data/portfolios';
 ---
 
 <Layout title="Portfolios Dev | UX Corp Rangel" description="Astro description">
   <main>
     <h1>Portfolios Dev</h1>
+    <div class="card-container">
+      {
+        portfolios.map(({ name, img, description, links }) => (
+          <section class="card-portfolio">
+            <div class="card-image">
+              <img src={img} alt={name} />
+            </div>
+            <div class="card-description">
+              <h2>{name}</h2>
+              <p>{description}</p>
+              <div class="card-links">
+                {links.map(({ label, icon, link, shadow, bgColor, textColor }) => (
+                  <LinkButton
+                    external
+                    label={label}
+                    icon={icon}
+                    link={link}
+                    shadow={shadow as 'green' | 'dark'}
+                    bgColor={bgColor}
+                    textColor={textColor}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        ))
+      }
+    </div>
+    <p class="coming-soon">Continuará...</p>
   </main>
 </Layout>
+
+<style>
+  main {
+    padding-block: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 80%;
+      margin-inline: auto;
+
+      .card-portfolio {
+        display: grid;
+        background: var(--mauve-color);
+        color: #04011c;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 4px 4px 0px 0px #39ed81;
+        border: 2px solid #04011c;
+
+        @media (width >= 768px) {
+          grid-template-columns: 0.5fr 1fr;
+        }
+
+        .card-image {
+          img {
+            --size: 100%;
+
+            width: var(--size);
+            height: var(--size);
+            object-fit: cover;
+          }
+        }
+
+        .card-description {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
+
+          @media (width >= 768px) {
+            padding: 1rem 2rem;
+          }
+
+          .card-links {
+            display: flex;
+            gap: 1rem;
+          }
+        }
+      }
+    }
+
+    .coming-soon {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+</style>
