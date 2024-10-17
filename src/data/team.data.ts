@@ -17,8 +17,7 @@ export const team: TeamMember[] = [
       { label: 'Behance', link: 'https://behance.net/rangelana1a2a6', icon: 'behance', color: '#1769ff' },
       { label: 'Discord', link: DISCORD_URL, icon: 'discord', color: 'var(--discord-color)' }
     ],
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Velit tristique viverra enim diam cursus. Justo varius sit convallis id eu duis. Amet lectus semper suspendisse enim. Imperdiet id mauris sagittis nunc platea aliquet aenean faucibus est'
+    description: `UX Designer con una comunidad tan avanzada que ya es casi una secta, de hecho, mis seguidores llevan mi apellido en sus nicknames. Amante de los unicornios, devs y todo lo que tenga que ver con jugar en equipo (o sea, Fortnite). Me encontrarás siempre rompiendo el estereotipo del UX gruñón: en lugar de hacerle la vida imposible a los devs, prefiero enseñar, compartir risas, y conquistar corazones... ¡incluso si se trata de conquistar una partida en Fortnite! Si buscas unicornios, buena onda, y algo de código, estás oficialmente en territorio UX Corp Rangel!`
   },
   {
     name: 'Ricardo Cuauro',
