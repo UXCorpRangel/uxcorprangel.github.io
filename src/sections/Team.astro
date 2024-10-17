@@ -90,6 +90,10 @@ import { team } from '@data/team.data';
 
           &:nth-child(even) {
             flex-direction: row-reverse;
+
+            @media (width < 768px) {
+              flex-direction: column;
+            }
             & img {
               border-inline-start: 2px solid var(--alt-text-color);
             }
@@ -97,6 +101,10 @@ import { team } from '@data/team.data';
 
           &:nth-child(odd) {
             flex-direction: row;
+
+            @media (width < 768px) {
+              flex-direction: column;
+            }
             & img {
               border-inline-end: 2px solid var(--alt-text-color);
             }
