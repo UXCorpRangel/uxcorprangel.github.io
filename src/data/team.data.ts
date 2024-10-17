@@ -8,7 +8,7 @@ export const team: TeamMember[] = [
     img: 'ana-rangel',
     tags: ['ux', 'ui'],
     socials: [
-      { label: 'Sitio Web', link: 'https://anarangel.github.io', icon: 'website', color: '#fa86ce' },
+      { label: 'Sitio Web', link: 'https://anarangel.github.io', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/anarangel', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/ux-ana-rangel', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Instagram', link: 'https://www.instagram.com/ux.ana.rangel', icon: 'instagram', color: 'var(--instagram-color)' },
@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
     img: 'felix-icaza',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://felixicaza.com', icon: 'website', color: '#2681c1' },
+      { label: 'Sitio Web', link: 'https://felixicaza.com', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/felixicaza', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/felixicaza', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     img: 'samuel-llibre-pillco',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://www.zyruks.com', icon: 'website', color: '#3b82f6' },
+      { label: 'Sitio Web', link: 'https://www.zyruks.com', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/Zyruks', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/zyruks', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Twitter', link: 'https://twitter.com/zyruks', icon: 'twitter', color: '#000000' }
@@ -74,7 +74,7 @@ export const team: TeamMember[] = [
     img: 'omar-aguirre',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://omao.dev', icon: 'website', color: '#18181b' },
+      { label: 'Sitio Web', link: 'https://omao.dev', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/omaaraguirre', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/omaaraguirre', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
@@ -95,7 +95,7 @@ export const team: TeamMember[] = [
     img: 'facundo-d-andrea',
     tags: ['dev', 'ui'],
     socials: [
-      { label: 'Sitio Web', link: 'https://facundodandrea.vercel.app', icon: 'website', color: '#ff5470' },
+      { label: 'Sitio Web', link: 'https://facundodandrea.vercel.app', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/Facundodandrea', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/facundo-d-andrea', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ],
@@ -109,7 +109,7 @@ export const volunteers: VolunteerMember[] = [
     img: 'alfonsina-lizardo',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://alfonsinalizardo.netlify.app', icon: 'website', color: '#5e3d84' },
+      { label: 'Sitio Web', link: 'https://alfonsinalizardo.netlify.app', icon: 'website', color: '#cc0404' },
       { label: 'Github', link: 'https://github.com/Alais29', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/alais29dev', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Instagram', link: 'https://www.instagram.com/alais29dev', icon: 'instagram', color: 'var(--instagram-color)' },
@@ -122,7 +122,7 @@ export const volunteers: VolunteerMember[] = [
     img: 'luis-tenorio',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://luis-code.vercel.app', icon: 'website', color: '#0f0f0f' },
+      { label: 'Sitio Web', link: 'https://luis-code.vercel.app', icon: 'website', color: '#cc0404' },
       { label: 'Github', link: 'https://github.com/luis-codex', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/luis-tenorio-code', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Twitter', link: 'https://x.com/luis_programing', icon: 'twitter', color: '#000000' },
@@ -134,7 +134,7 @@ export const volunteers: VolunteerMember[] = [
     img: 'luciano-morales',
     tags: ['dev'],
     socials: [
-      { label: 'Sitio Web', link: 'https://www.luciano-morales.com/', icon: 'website', color: '#000000' },
+      { label: 'Sitio Web', link: 'https://www.luciano-morales.com/', icon: 'website', color: '#cc0404' },
       { label: 'Github', link: 'https://github.com/luc-mo', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/lucmoralesr', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ]
