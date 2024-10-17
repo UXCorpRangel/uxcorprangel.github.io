@@ -124,7 +124,7 @@ export const volunteers: VolunteerMember[] = [
       { label: 'Sitio Web', link: 'https://luis-code.vercel.app', icon: 'website', color: '#cc0404' },
       { label: 'Github', link: 'https://github.com/luis-codex', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/luis-tenorio-code', icon: 'linkedin', color: 'var(--linkedin-color)' },
-      { label: 'Twitter', link: 'https://x.com/luis_programing', icon: 'twitter', color: '#000000' },
+      { label: 'Twitter', link: 'https://x.com/luis_codex', icon: 'twitter', color: '#000000' },
       { label: 'TikTok', link: 'https://tiktok.com/@luis_codex', icon: 'tiktok', color: '#000000' }
     ]
   },
