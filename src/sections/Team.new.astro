@@ -1,0 +1,171 @@
+---
+import RoleTag from '@components/RoleTag.astro';
+import LinkButton from '@components/LinkButton.astro';
+import { team } from '@data/team.data';
+---
+
+<section id="equipo">
+  <div class="container">
+    <header>
+      <h1>Equipo</h1>
+    </header>
+
+    <div class="members">
+      {
+        team.map(({ description, img, name, socials, tags }) => (
+          <article class="member">
+            <img src={`/assets/images/team/${img}.webp`} alt={name} />
+
+            <div class="info">
+              <h2>{name}</h2>
+
+              <p>{description}</p>
+
+              <div class="tags">
+                {tags.map(tag => (
+                  <RoleTag role={tag} />
+                ))}
+              </div>
+
+              <div class="social">
+                {socials.map(({ icon, label, link, color }) => (
+                  <LinkButton external label={label} icon={`socials/${icon}`} link={link} bgColor={color} textColor="var(--text-color)" />
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .container {
+      width: min(80rem, 100vw);
+
+      & header h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        text-decoration: underline 0.25rem;
+      }
+
+      & .members {
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & .member {
+          display: flex;
+          overflow: hidden;
+          align-items: stretch;
+          justify-content: center;
+          color: var(--alt-text-color);
+
+          gap: 1rem;
+          border-radius: 1rem;
+          background: var(--fuchsia-blue-color);
+          border: 2px solid var(--alt-text-color);
+          box-shadow: 4px 4px 0px 0px var(--spring-green-color);
+
+          & img {
+            width: 360px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+          }
+
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @media (width < 768px) {
+              flex-direction: column;
+            }
+            & img {
+              border-inline-start: 2px solid var(--alt-text-color);
+            }
+          }
+
+          &:nth-child(odd) {
+            flex-direction: row;
+
+            @media (width < 768px) {
+              flex-direction: column;
+            }
+            & img {
+              border-inline-end: 2px solid var(--alt-text-color);
+            }
+          }
+
+          & .info {
+            flex: 1;
+            gap: 1rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2 {
+              font-size: 2rem;
+              text-align: start;
+              font-weight: 700;
+              line-height: 1.5;
+              font-family: var(--main-font-family);
+            }
+
+            p {
+              flex: 1;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1.5;
+            }
+
+            & .tags {
+              flex: 1;
+              gap: 1rem;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+
+            & .social {
+              flex: 1;
+              gap: 0.5rem 1rem;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-start;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      @media (width < 1280px) {
+        width: 90%;
+      }
+
+      @media (width < 768px) {
+        & header h1 {
+          font-size: 2.188em;
+        }
+
+        & .members {
+          gap: 6rem;
+        }
+      }
+    }
+  }
+</style>
