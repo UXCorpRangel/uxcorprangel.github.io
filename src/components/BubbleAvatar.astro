@@ -8,6 +8,8 @@ const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
   <img src={imageSrc} alt={altText} class="avatar-volunteer" />
   <div class="buttons-volunteer">
     <LinkButton
+      external
+      hideLabel
       link={linkedinLink}
       label="LinkedIn"
       icon="socials/linkedin"
@@ -15,7 +17,16 @@ const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
       bgColor="var(--linkedin-color)"
       textColor="var(--text-color)"
     />
-    <LinkButton link={githubLink} label="GitHub" icon="socials/github" shadow="green" bgColor="var(--github-color)" textColor="var(--text-color)" />
+    <LinkButton
+      external
+      hideLabel
+      link={githubLink}
+      label="GitHub"
+      icon="socials/github"
+      shadow="green"
+      bgColor="var(--github-color)"
+      textColor="var(--text-color)"
+    />
   </div>
 </div>
 

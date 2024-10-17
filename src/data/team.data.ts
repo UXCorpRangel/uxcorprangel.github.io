@@ -133,7 +133,7 @@ export const volunteers: TeamMember[] = [
   },
   {
     name: 'Luciano Morales',
-    img: 'luis-tenorio',
+    img: 'luciano-morales',
     tags: ['dev'],
     socials: [
       { label: 'Sitio Web', link: 'https://www.luciano-morales.com/', icon: 'website', color: '#000000' },
