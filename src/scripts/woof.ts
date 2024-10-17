@@ -8,6 +8,12 @@ document.addEventListener('keydown', event => {
     const audio = new Audio('/assets/audio/woof.ogg');
     audio.play();
 
+    document.body.classList.add('woof');
+
+    setTimeout(() => {
+      document.body.classList.remove('woof');
+    }, 1000);
+
     typedWord = '';
   }
 

@@ -193,3 +193,30 @@ const ogURL = `${site}/og.png`;
     cursor: url(/assets/images/cursor/cursor-pointer-clicked.png), pointer;
   }
 </style>
+
+<style>
+  body {
+    &::before {
+      content: '';
+      pointer-events: none;
+      background-size: cover;
+      background-image: url('/assets/images/harley.webp');
+
+      width: 12rem;
+      z-index: 9999;
+      position: fixed;
+      aspect-ratio: 0.9;
+      inset-block-end: -20rem;
+      inset-inline-end: -15rem;
+
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-property: inset-block-end, inset-inline-end;
+    }
+
+    &.woof::before {
+      inset-block-end: -1rem;
+      inset-inline-end: -1rem;
+    }
+  }
+</style>
