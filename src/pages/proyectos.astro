@@ -1,7 +1,7 @@
 ---
 import LinkButton from '@components/LinkButton.astro';
 import ProjectCard from '@components/ProjectCard.astro';
-/*import BubbleAvatar from '@components/BubbleAvatar.astro';*/
+import BubbleAvatar from '@components/BubbleAvatar.astro';
 import CurveIconLeft from '@sections/Projects/CurveIconLeft.astro';
 import CurveIconRight from '@sections/Projects/CurveIconRight.astro';
 import Layout from '@layouts/Layout.astro';
@@ -128,22 +128,15 @@ import Layout from '@layouts/Layout.astro';
               />
               <LinkButton label="GitHub" link="https://github.com/UXCorpRangel/js-conf-cl-2024" icon="socials/github" external />
             </ProjectCard>
-            {
-              /*           <div class="volunteer">
+            <div class="volunteer">
               <BubbleAvatar
-                imageSrc="./assets/images/volunteers/luis-tenorio.webp"
-                altText="Facu"
-                linkedinLink="https://linkedin.com/in/facu"
-                githubLink="https://github.com/facu"
+                imageSrc="./assets/images/volunteers/juan-palma.webp"
+                altText="Juan Palma"
+                webLink="https://landing-js-conf2024.netlify.app/"
+                linkedinLink="https://www.linkedin.com/in/juan-palma-alvarez/"
+                githubLink="https://github.com/jpalma76/landing-js-conf2024"
               />
-              <BubbleAvatar
-                imageSrc="./assets/images/volunteers/luis-tenorio.webp"
-                altText="Facu"
-                linkedinLink="https://linkedin.com/in/facu"
-                githubLink="https://github.com/facu"
-              />
-            </div> */
-            }
+            </div>
           </div>
         </div>
         <div class="left">
@@ -230,13 +223,23 @@ import Layout from '@layouts/Layout.astro';
           max-width: 600px;
           position: relative;
           right: 6%;
+          z-index: 1;
 
           .volunteer {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
             gap: 8rem;
             margin: 1rem 0;
+
+            z-index: -1;
+            position: absolute;
+            inset-block-inline: 0;
+
+            @media (width < 768px) {
+              position: relative;
+            }
           }
         }
       }

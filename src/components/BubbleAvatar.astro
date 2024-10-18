@@ -1,22 +1,50 @@
 ---
 import LinkButton from './LinkButton.astro';
 
-const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
+type Props = {
+  imageSrc: string;
+  altText: string;
+  linkedinLink?: string;
+  githubLink: string;
+  webLink?: string;
+};
+
+const { imageSrc, altText, linkedinLink, githubLink, webLink } = Astro.props;
 ---
 
 <div class="bubble">
   <img src={imageSrc} alt={altText} class="avatar-volunteer" />
   <div class="buttons-volunteer">
-    <LinkButton
-      external
-      hideLabel
-      link={linkedinLink}
-      label="LinkedIn"
-      icon="socials/linkedin"
-      shadow="green"
-      bgColor="var(--linkedin-color)"
-      textColor="var(--text-color)"
-    />
+    {
+      linkedinLink && (
+        <LinkButton
+          external
+          hideLabel
+          link={linkedinLink}
+          label="LinkedIn"
+          icon="socials/linkedin"
+          shadow="green"
+          bgColor="var(--linkedin-color)"
+          textColor="var(--text-color)"
+        />
+      )
+    }
+
+    {
+      webLink && (
+        <LinkButton
+          external
+          hideLabel
+          link={webLink}
+          label="Web"
+          icon="socials/website"
+          shadow="green"
+          bgColor="var(--github-color)"
+          textColor="var(--text-color)"
+        />
+      )
+    }
+
     <LinkButton
       external
       hideLabel
@@ -33,6 +61,24 @@ const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
 <style>
   .bubble {
     width: 131px;
+    position: relative;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      background-color: var(--spring-green-color);
+
+      width: 0.5rem;
+      height: 6rem;
+      inset-block-start: -1.5rem;
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+
+      @media (width < 768px) {
+        display: none;
+      }
+    }
 
     .avatar-volunteer {
       border-radius: 100%;
@@ -42,7 +88,7 @@ const { imageSrc, altText, linkedinLink, githubLink } = Astro.props;
     .buttons-volunteer {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.25rem;
       position: relative;
       top: -20px;
     }
