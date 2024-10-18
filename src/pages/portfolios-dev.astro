@@ -21,16 +21,8 @@ import portfolios from '@data/portfolios';
               <h2>{name}</h2>
               <p>{description}</p>
               <div class="card-links">
-                {links.map(({ label, icon, link, shadow, bgColor, textColor }) => (
-                  <LinkButton
-                    external
-                    label={label}
-                    icon={icon}
-                    link={link}
-                    shadow={shadow as 'green' | 'dark'}
-                    bgColor={bgColor}
-                    textColor={textColor}
-                  />
+                {links.map(({ label, icon, link, bgColor, textColor }) => (
+                  <LinkButton external label={label} icon={icon} link={link} bgColor={bgColor} textColor={textColor} />
                 ))}
               </div>
             </div>

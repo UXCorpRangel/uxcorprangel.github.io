@@ -10,7 +10,6 @@ const portfolios = [
         label: 'Demo',
         icon: 'socials/website',
         link: 'https://unicorn-sparkle.web.app',
-        shadow: 'green',
         bgColor: 'var(--cinnabar-color)',
         textColor: 'var(--text-color)'
       },
@@ -18,7 +17,6 @@ const portfolios = [
         label: 'Repositorio',
         icon: 'socials/github',
         link: 'https://github.com/UXCorpRangel/portfolios-dev/tree/main/unicorn-sparkle',
-        shadow: 'green',
         bgColor: 'var(--text-color)',
         textColor: 'var(--alt-text-color)'
       }
