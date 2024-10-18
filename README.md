@@ -1,3 +1,5 @@
+![preview](/preview.webp)
+
 # 🌟 Bienvenidos a UX Corp Rangel 🌟
 
 Este repositorio alberga el sitio web de UX Corp Rangel, una comunidad creada con mucho cariño por Ana Rangel 💖. Este espacio ha sido diseñado y construido por miembros de la comunidad como una **sorpresa especial** 🎉, un pequeño gesto de agradecimiento y aprecio por todo lo que Ana significa para nosotros. 🙌
