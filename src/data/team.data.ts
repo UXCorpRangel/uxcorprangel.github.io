@@ -141,5 +141,11 @@ export const volunteers: VolunteerMember[] = [
       { label: 'Github', link: 'https://github.com/luc-mo', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/lucmoralesr', icon: 'linkedin', color: 'var(--linkedin-color)' }
     ]
+  },
+  {
+    name: 'Tomas Graziano',
+    img: 'tomas-graziano',
+    tags: ['dev'],
+    socials: [{ label: 'GitHub', link: 'https://github.com/GountzJs', icon: 'github', color: 'var(--github-color)' }]
   }
 ];
