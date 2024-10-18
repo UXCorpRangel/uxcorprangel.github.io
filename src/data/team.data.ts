@@ -32,7 +32,7 @@ export const team: TeamMember[] = [
       { label: 'Discord', link: 'https://discord.gg/3m9KdYAf3p', icon: 'discord', color: 'var(--discord-color)' }
     ],
     description:
-      'Desarrollador frontend en constante aprendizaje autodidacta, moderador del canal de Ana, trabajador explotado (por él mismo) durante el día y streamer de noche. Amanete del café y el código vanilla pero siempre dispuesto a probar nuevas tecnologías. Colaborador en distintas comunidades siempre dispuesto a aportar líneas de código, buena onda y mucha joda. Recientemente nombrado como TL por Ana aunque siempre le pide ayuda a su buen amigo Gepeto.'
+      'Desarrollador frontend en constante aprendizaje autodidacta, moderador del canal de Ana, trabajador explotado (por él mismo) durante el día y streamer de noche. Amante del café y el código vanilla pero siempre dispuesto a probar nuevas tecnologías. Colaborador en distintas comunidades siempre dispuesto a aportar líneas de código, buena onda y mucha joda. Recientemente nombrado como TL por Ana aunque siempre le pide ayuda a su buen amigo Gepeto.'
   },
   {
     name: 'Félix Icaza',
