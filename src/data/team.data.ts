@@ -56,7 +56,7 @@ export const team: TeamMember[] = [
       { label: 'Twitter', link: 'https://twitter.com/zyruks', icon: 'twitter', color: '#000000' }
     ],
     description:
-      'Hijo de Serudda, TL pachonsito designado por defecto, diseñador gráfico titulado pero desarrollador por vocación (por lo menos no terminó en el McDonald´s). Cuenta la leyenda que debido a sus estrictas reglas el portafolios de Ana estuvo varado en el limbo durante 6 meses. Aunque la mayor parte del tiempo está desaparecido tiene un lugar especial dentro de la corporación. Este quisqueyano hermoso no se cansa de aportar valor a la comunidad.'
+      'Hijo de Serudda, TL pachonsito designado por defecto, diseñador gráfico titulado pero desarrollador por vocación (por lo menos no terminó en el McDonald´s). Cuenta la leyenda que debido a sus estrictas reglas el portafolio de Ana estuvo varado en el limbo durante 8 meses. Aunque la mayor parte del tiempo está desaparecido tiene un lugar especial dentro de la corporación. Este quisqueyano hermoso no se cansa de aportar valor a la comunidad.'
   },
   {
     name: 'Jaime Gutiérrez',
