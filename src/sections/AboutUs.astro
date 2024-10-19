@@ -52,6 +52,9 @@
           font-weight: 400;
           font-size: 4.375rem;
           margin-bottom: 4rem;
+          @media (width < 768px) {
+            text-align: center;
+          }
 
           & span {
             text-decoration: underline 0.25rem;
@@ -63,11 +66,21 @@
         max-width: 70.563rem;
         margin: 0 auto;
 
+        @media (width < 768px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
         & p {
           font-weight: 500;
           margin-bottom: 2rem;
           text-wrap: pretty;
           font-size: 1.25rem;
+
+          @media (width < 768px) {
+            text-align: center;
+          }
         }
 
         & hr {
