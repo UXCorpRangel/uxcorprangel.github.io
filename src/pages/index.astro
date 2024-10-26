@@ -59,7 +59,11 @@ import Team from '@sections/Team.astro';
 </style>
 
 <script>
-  import HarleyOneko from '@scripts/harley-oneko';
+  const isHoverDevice = window.matchMedia('(any-hover: hover)').matches;
 
-  new HarleyOneko('/assets/images/harley-oneko.png');
+  if (isHoverDevice) {
+    import('@scripts/harley-oneko').then(HarleyOneko => {
+      new HarleyOneko.default('/assets/images/harley-oneko.png');
+    });
+  }
 </script>
