@@ -116,7 +116,7 @@ export default class HarleyOneko {
 
     document.body.appendChild(this.onekoEl);
 
-    document.addEventListener('mousemove', event => {
+    document.addEventListener('pointermove', (event: MouseEvent) => {
       this.mousePosX = event.clientX;
       this.mousePosY = event.clientY;
       this.onekoEl.style.zIndex = '2147483647';
