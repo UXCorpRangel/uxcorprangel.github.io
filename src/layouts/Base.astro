@@ -130,7 +130,29 @@ const ogURL = `${site}/og.png`;
     color: var(--text-color);
     background-color: var(--bg-color);
     font-family: var(--main-font-family);
-    cursor: url(/assets/images/cursor/cursor-auto.webp), auto;
+
+    &::before {
+      content: '';
+      pointer-events: none;
+      background-size: cover;
+      background-image: url('/assets/images/harley.webp');
+
+      width: 12rem;
+      z-index: 9999;
+      position: fixed;
+      aspect-ratio: 0.9;
+      inset-block-end: -20rem;
+      inset-inline-end: -15rem;
+
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-property: inset-block-end, inset-inline-end;
+    }
+
+    &.woof::before {
+      inset-block-end: -1rem;
+      inset-inline-end: -1rem;
+    }
 
     &::-webkit-scrollbar {
       width: var(--scrollbar-size);
@@ -177,46 +199,5 @@ const ogURL = `${site}/og.png`;
 
   p {
     text-wrap: pretty;
-  }
-
-  a,
-  a *,
-  button,
-  button * {
-    cursor: url(/assets/images/cursor/cursor-pointer.webp), pointer;
-  }
-
-  a:active,
-  a:active *,
-  button:active,
-  button:active * {
-    cursor: url(/assets/images/cursor/cursor-pointer-clicked.webp), pointer;
-  }
-</style>
-
-<style>
-  body {
-    &::before {
-      content: '';
-      pointer-events: none;
-      background-size: cover;
-      background-image: url('/assets/images/harley.webp');
-
-      width: 12rem;
-      z-index: 9999;
-      position: fixed;
-      aspect-ratio: 0.9;
-      inset-block-end: -20rem;
-      inset-inline-end: -15rem;
-
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
-      transition-property: inset-block-end, inset-inline-end;
-    }
-
-    &.woof::before {
-      inset-block-end: -1rem;
-      inset-inline-end: -1rem;
-    }
   }
 </style>
