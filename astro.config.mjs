@@ -5,6 +5,9 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://uxcorprangel.github.io',
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
   trailingSlash: 'never',
   integrations: [icon()],
   vite: {

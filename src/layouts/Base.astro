@@ -18,6 +18,15 @@ const { title, description } = Astro.props;
 
 const site = import.meta.env.SITE;
 const ogURL = `${site}/og.png`;
+
+const CURSOR_AUTO =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABRUExURUdwTAAAAAAAAFhYWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRkZAAAAENDQyoqKm1tbQAAAAAAAAAAAP///9/f33BwcPz8/ISEhJiYmNvb277qo8AAAAATdFJOUwDuKf0U0+GQDMU3HfyI+/79obAIDL66AAAAoElEQVQ4y5XTzQKCIBAEYCRT+1Gr3TR9/wcNiAw3d6g5cJnvxqwxLjXdGoNCRIcmA7CgnKCccG3nRQnAvHPPvtTBfUTCAx7PugiA2YvqBIAu3oAvilgAD15YABSRAH5siRQEUVgAtsQavMQRAJ6kkOBLLGAaYvq1iCB8aJJCANlTJb47DKL+pLV/DWbuMpPrUR9nr/e/HU7u9PDxtnRV+yd7ERxSGWD4qwAAAABJRU5ErkJggg==';
+
+const CURSOR_POINTER =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACEUExURUdwTAAAAAAAAD8/Py4uLgAAAAAAAE1NTQMDAwAAAAAAAAAAAAoKCgAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAP////Ly8mBgYL+/v/v7+319fWtra+rq6rm5uZ+fn66urpqams/Pz46OjltbW9DQ0NLS0iUlJc7OzikkeNEAAAAYdFJOUwCP5v79sUH+9V9S0v2+IROgBGv7CTZ9dzC9TnkAAAEoSURBVDjLjZOHcoMwEERNC80UA7b3lNAMLkn+//9ywjYWCpDsDMOgfUh30mqzGRWE8NJks6gMUmGx5BcesGUiWwL2wFd5AdIl4A2wqAWcFcClj38AprFfB1jGXwAcI9DtJHMewOV6Z3bTHk05KAGbvmdm2Q3+AzjzLPXwHRXK+nlvM9AOwJYaTKv1gSv1DHQM3BgQQF1xywrwTicGGrsiYdUSaIhPRgMseooBQd4KQK5L64CUDrT8rALUlItAINv8JbyAISy6GmUfEo5jqQMd7/V4GCHQ6YALHEbgANjaFDcuIX7FgSuuJr6wp/GUt6ZXfV7Ai9XIcKBQi6f/yf/Dn16siIfy6syViNaVYTjqVy+9hyTPh5fnz+Q6xKg0no++EXI7ZnRU7B+vBTQDJqFadAAAAABJRU5ErkJggg==';
+
+const CURSOR_POINTER_CLICKED =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABvUExURUdwTFdXVwYGBgAAAAAAAAAAAAAAAAAAAAICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4uLk5OTgAAAAAAAP///+/v7w4ODvr6+jw8PISEhB0dHaCgoNfX12dnZ+Dg4Lq6usDAwCEhIfbj5Z8AAAAWdFJOUwD3+IzG8dZR/CwItA2edBRrO+f4+j9x64dWAAABEklEQVQ4y5WT2ZKCMBBFWcIuio7eQBIIqP//jdPBEpMwYE0/UelTpyF9CYL/VFnutgsGsNtOPwJVft4EKqDryLEJXAA9kWITSICWk+IrUGflPgCkpy9AntbHg9/O4vwFhMowuBRO+8DmUwNo3s/PadxYlhgLMBFwHTrPQvPV+AHuXL4sCwBEvH0DTzwIkMZyXgGjFFzJloCBh0C2At6ler0PmPIB0XViF+CtK1gD3BXwqwUk/nxTP9Zn0k3f/b6g5Zysqx59YLBvsqAda09AE45OYqX7jrT1xApOQQND4Q6wBUHQ0IGcFj+tFpUbKROJfHwYi1YmM8xPXZPPGeifc1hQr7NdVFgqzf7+PWMWzaG22r/nNS2b6FpMtAAAAABJRU5ErkJggg==';
 ---
 
 <!doctype html>
@@ -27,6 +36,34 @@ const ogURL = `${site}/og.png`;
     {description && <link href={Astro.url.href} rel="canonical" />}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
+    <link rel="preload" href={CURSOR_AUTO} as="image" type="image/png" fetchpriority="high" />
+    <link rel="preload" href={CURSOR_POINTER} as="image" type="image/png" fetchpriority="high" />
+    <link rel="preload" href={CURSOR_POINTER_CLICKED} as="image" type="image/png" fetchpriority="high" />
+
+    <style is:inline>
+      body {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABRUExURUdwTAAAAAAAAFhYWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRkZAAAAENDQyoqKm1tbQAAAAAAAAAAAP///9/f33BwcPz8/ISEhJiYmNvb277qo8AAAAATdFJOUwDuKf0U0+GQDMU3HfyI+/79obAIDL66AAAAoElEQVQ4y5XTzQKCIBAEYCRT+1Gr3TR9/wcNiAw3d6g5cJnvxqwxLjXdGoNCRIcmA7CgnKCccG3nRQnAvHPPvtTBfUTCAx7PugiA2YvqBIAu3oAvilgAD15YABSRAH5siRQEUVgAtsQavMQRAJ6kkOBLLGAaYvq1iCB8aJJCANlTJb47DKL+pLV/DWbuMpPrUR9nr/e/HU7u9PDxtnRV+yd7ERxSGWD4qwAAAABJRU5ErkJggg=='),
+          auto;
+      }
+
+      a,
+      a *,
+      button,
+      button * {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACEUExURUdwTAAAAAAAAD8/Py4uLgAAAAAAAE1NTQMDAwAAAAAAAAAAAAoKCgAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAP////Ly8mBgYL+/v/v7+319fWtra+rq6rm5uZ+fn66urpqams/Pz46OjltbW9DQ0NLS0iUlJc7OzikkeNEAAAAYdFJOUwCP5v79sUH+9V9S0v2+IROgBGv7CTZ9dzC9TnkAAAEoSURBVDjLjZOHcoMwEERNC80UA7b3lNAMLkn+//9ywjYWCpDsDMOgfUh30mqzGRWE8NJks6gMUmGx5BcesGUiWwL2wFd5AdIl4A2wqAWcFcClj38AprFfB1jGXwAcI9DtJHMewOV6Z3bTHk05KAGbvmdm2Q3+AzjzLPXwHRXK+nlvM9AOwJYaTKv1gSv1DHQM3BgQQF1xywrwTicGGrsiYdUSaIhPRgMseooBQd4KQK5L64CUDrT8rALUlItAINv8JbyAISy6GmUfEo5jqQMd7/V4GCHQ6YALHEbgANjaFDcuIX7FgSuuJr6wp/GUt6ZXfV7Ai9XIcKBQi6f/yf/Dn16siIfy6syViNaVYTjqVy+9hyTPh5fnz+Q6xKg0no++EXI7ZnRU7B+vBTQDJqFadAAAAABJRU5ErkJggg=='),
+          pointer;
+      }
+
+      a:active,
+      a:active *,
+      button:active,
+      button:active * {
+        cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABvUExURUdwTFdXVwYGBgAAAAAAAAAAAAAAAAAAAAICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4uLk5OTgAAAAAAAP///+/v7w4ODvr6+jw8PISEhB0dHaCgoNfX12dnZ+Dg4Lq6usDAwCEhIfbj5Z8AAAAWdFJOUwD3+IzG8dZR/CwItA2edBRrO+f4+j9x64dWAAABEklEQVQ4y5WT2ZKCMBBFWcIuio7eQBIIqP//jdPBEpMwYE0/UelTpyF9CYL/VFnutgsGsNtOPwJVft4EKqDryLEJXAA9kWITSICWk+IrUGflPgCkpy9AntbHg9/O4vwFhMowuBRO+8DmUwNo3s/PadxYlhgLMBFwHTrPQvPV+AHuXL4sCwBEvH0DTzwIkMZyXgGjFFzJloCBh0C2At6ler0PmPIB0XViF+CtK1gD3BXwqwUk/nxTP9Zn0k3f/b6g5Zysqx59YLBvsqAda09AE45OYqX7jrT1xApOQQND4Q6wBUHQ0IGcFj+tFpUbKROJfHwYi1YmM8xPXZPPGeifc1hQr7NdVFgqzf7+PWMWzaG22r/nNS2b6FpMtAAAAABJRU5ErkJggg=='),
+          pointer;
+      }
+    </style>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
@@ -130,7 +167,29 @@ const ogURL = `${site}/og.png`;
     color: var(--text-color);
     background-color: var(--bg-color);
     font-family: var(--main-font-family);
-    cursor: url(/assets/images/cursor/cursor-auto.webp), auto;
+
+    &::before {
+      content: '';
+      pointer-events: none;
+      background-size: cover;
+      background-image: url('/assets/images/harley.webp');
+
+      width: 12rem;
+      z-index: 9999;
+      position: fixed;
+      aspect-ratio: 0.9;
+      inset-block-end: -20rem;
+      inset-inline-end: -15rem;
+
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-property: inset-block-end, inset-inline-end;
+    }
+
+    &.woof::before {
+      inset-block-end: -1rem;
+      inset-inline-end: -1rem;
+    }
 
     &::-webkit-scrollbar {
       width: var(--scrollbar-size);
@@ -177,46 +236,5 @@ const ogURL = `${site}/og.png`;
 
   p {
     text-wrap: pretty;
-  }
-
-  a,
-  a *,
-  button,
-  button * {
-    cursor: url(/assets/images/cursor/cursor-pointer.webp), pointer;
-  }
-
-  a:active,
-  a:active *,
-  button:active,
-  button:active * {
-    cursor: url(/assets/images/cursor/cursor-pointer-clicked.webp), pointer;
-  }
-</style>
-
-<style>
-  body {
-    &::before {
-      content: '';
-      pointer-events: none;
-      background-size: cover;
-      background-image: url('/assets/images/harley.webp');
-
-      width: 12rem;
-      z-index: 9999;
-      position: fixed;
-      aspect-ratio: 0.9;
-      inset-block-end: -20rem;
-      inset-inline-end: -15rem;
-
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
-      transition-property: inset-block-end, inset-inline-end;
-    }
-
-    &.woof::before {
-      inset-block-end: -1rem;
-      inset-inline-end: -1rem;
-    }
   }
 </style>
