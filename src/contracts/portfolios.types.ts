@@ -1,8 +1,11 @@
 import type { SocialIconLink } from './link.types';
 
-type PortfolioLink = SocialIconLink & {
+export type PortfolioLink = SocialIconLink & {
   /** Color del texto del enlace */
-  textColor: string;
+  textColor?: string;
+
+  /** Si el enlace es externo */
+  external?: boolean;
 };
 
 export type Portfolio = {
