@@ -3,7 +3,7 @@ import type { Portfolio } from '@contracts/portfolios.types';
 export const portfolios: Portfolio[] = [
   {
     name: 'Unicorn Sparkle',
-    img: '/assets/images/projects/portfolio-dev.webp',
+    img: '/assets/images/projects/unicorn-sparkle.webp',
     description:
       'Unicorn Sparkle es la plantilla de portafolio definitiva para desarrolladores que quieren brillar. Combina diseño moderno y funcionalidad mágica para mostrar tus proyectos y habilidades. ¡Destaca con estilo y haz que tu portafolio sea inolvidable!',
     command: 'pnpm create astro@latest -- --template UXCorpRangel/portfolios-dev/unicorn-sparkle',
