@@ -147,5 +147,16 @@ export const volunteers: VolunteerMember[] = [
     img: 'tomas-graziano',
     tags: ['dev'],
     socials: [{ label: 'GitHub', link: 'https://github.com/GountzJs', icon: 'github', color: 'var(--github-color)' }]
+  },
+  {
+    name: 'Luis Pérez',
+    img: 'luis-perez',
+    tags: ['editor', 'dev', 'ui'],
+    socials: [
+      { label: 'Sitio Web', link: 'https://luis-perez.satemporary.store', icon: 'website', color: '#cc0404' },
+      { label: 'Github', link: 'https://github.com/Luis-Perez-01', icon: 'github', color: 'var(--github-color)' },
+      { label: 'LinkedIn', link: 'https://www.linkedin.com/in/luismpp', icon: 'linkedin', color: 'var(--linkedin-color)' },
+      { label: 'VODify Studio', link: 'https://vodifystudio.com', icon: 'website', color: '#ff0066' }
+    ]
   }
 ];
