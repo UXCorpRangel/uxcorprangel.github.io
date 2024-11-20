@@ -8,7 +8,7 @@ export const team: TeamMember[] = [
     img: 'ana-rangel',
     tags: ['ux', 'ui'],
     socials: [
-      { label: 'Sitio Web', link: 'https://anarangel.github.io', icon: 'website', color: '#d22222' },
+      { label: 'Sitio Web', link: 'https://uxanarangel.com', icon: 'website', color: '#d22222' },
       { label: 'Github', link: 'https://github.com/anarangel', icon: 'github', color: 'var(--github-color)' },
       { label: 'LinkedIn', link: 'https://www.linkedin.com/in/ux-ana-rangel', icon: 'linkedin', color: 'var(--linkedin-color)' },
       { label: 'Instagram', link: 'https://www.instagram.com/ux.ana.rangel', icon: 'instagram', color: 'var(--instagram-color)' },
