@@ -23,7 +23,7 @@
     "@astrojs/check": "^0.9.4",
     "@fontsource-variable/onest": "^5.1.0",
     "@fontsource/titan-one": "^5.1.0",
-    "astro": "^4.16.10",
+    "astro": "^4.16.13",
     "astro-icon": "^1.1.1",
     "astro-seo-schema": "^4.0.2",
     "sanitize.css": "^13.0.0",

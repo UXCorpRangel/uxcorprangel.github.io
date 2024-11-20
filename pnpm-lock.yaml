@@ -18,14 +18,14 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       astro:
-        specifier: ^4.16.10
-        version: 4.16.10(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2)
+        specifier: ^4.16.13
+        version: 4.16.13(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2)
       astro-icon:
         specifier: ^1.1.1
         version: 1.1.1
       astro-seo-schema:
         specifier: ^4.0.2
-        version: 4.0.2(astro@4.16.10(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2))(schema-dts@1.1.2(typescript@5.6.2))
+        version: 4.0.2(astro@4.16.13(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2))(schema-dts@1.1.2(typescript@5.6.2))
       sanitize.css:
         specifier: ^13.0.0
         version: 13.0.0
@@ -176,11 +176,6 @@ packages:
   '@babel/helpers@7.26.0':
     resolution: {integrity: sha512-tbhNuIxNcVb21pInl3ZSjksLCvgdZy9KwJ8brv993QtIVKJBBkYXz4q4ZbAv31GdnC+R90np23L5FbEBlthAEw==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/parser@7.25.7':
-    resolution: {integrity: sha512-aZn7ETtQsjjGG5HruveUK06cU3Hljuhd9Iojm4M8WWv3wLE6OkE5PWbDUkItmMgegmccaITudyuW5RPYrYlgWw==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
 
   '@babel/parser@7.26.2':
     resolution: {integrity: sha512-DWMCZH9WA4Maitz2q21SRKHo9QXZxkDsbNZoVD62gusNtNBBqDg9i7uOhASfTfIGNzW+O+r7+jAlM8dwphcJKQ==}
@@ -892,8 +887,8 @@ packages:
       astro: ^4.0.0
       schema-dts: ^1.1.0
 
-  astro@4.16.10:
-    resolution: {integrity: sha512-a+nB4bZE50NXHLzVXUHtx/lYct2Aa8kbqZnWNrWqkU97RuhBuWJ5H5/LQbKRnBWGvqChKfJBiMWJe53TY9ieYQ==}
+  astro@4.16.13:
+    resolution: {integrity: sha512-Mtd76+BC0zLWqoXpf9xc731AhdH4MNh5JFHYdLRvSH0Nqn48hA64dPGh/cWsJvh/DZFmC0NTZusM1Qq2gyNaVg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2308,9 +2303,6 @@ packages:
   text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  tinyexec@0.3.0:
-    resolution: {integrity: sha512-tVGE0mVJPGb0chKhqmsoosjsS+qUnJVGJpZgsHYQcGoPlG3B51R3PouqTgEGH2Dc9jjFyOqOpix6ZHNMXp1FZg==}
-
   tinyexec@0.3.1:
     resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
 
@@ -2695,7 +2687,7 @@ snapshots:
   '@antfu/install-pkg@0.4.1':
     dependencies:
       package-manager-detector: 0.2.1
-      tinyexec: 0.3.0
+      tinyexec: 0.3.1
 
   '@antfu/utils@0.7.10': {}
 
@@ -2858,10 +2850,6 @@ snapshots:
   '@babel/helpers@7.26.0':
     dependencies:
       '@babel/template': 7.25.9
-      '@babel/types': 7.26.0
-
-  '@babel/parser@7.25.7':
-    dependencies:
       '@babel/types': 7.26.0
 
   '@babel/parser@7.26.2':
@@ -3284,7 +3272,7 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.25.7
+      '@babel/parser': 7.26.2
       '@babel/types': 7.26.0
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
@@ -3296,7 +3284,7 @@ snapshots:
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.25.7
+      '@babel/parser': 7.26.2
       '@babel/types': 7.26.0
 
   '@types/babel__traverse@7.20.6':
@@ -3552,12 +3540,12 @@ snapshots:
       - debug
       - supports-color
 
-  astro-seo-schema@4.0.2(astro@4.16.10(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2))(schema-dts@1.1.2(typescript@5.6.2)):
+  astro-seo-schema@4.0.2(astro@4.16.13(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2))(schema-dts@1.1.2(typescript@5.6.2)):
     dependencies:
-      astro: 4.16.10(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2)
+      astro: 4.16.13(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2)
       schema-dts: 1.1.2(typescript@5.6.2)
 
-  astro@4.16.10(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2):
+  astro@4.16.13(@types/node@22.7.5)(lightningcss@1.27.0)(rollup@4.24.0)(typescript@5.6.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -4472,7 +4460,7 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.25.7
+      '@babel/parser': 7.26.2
       '@babel/types': 7.26.0
       source-map-js: 1.2.1
 
@@ -4832,7 +4820,7 @@ snapshots:
 
   mlly@1.7.2:
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.14.0
       pathe: 1.1.2
       pkg-types: 1.2.0
       ufo: 1.5.4
@@ -5319,8 +5307,6 @@ snapshots:
       yallist: 4.0.0
 
   text-table@0.2.0: {}
-
-  tinyexec@0.3.0: {}
 
   tinyexec@0.3.1: {}
 
